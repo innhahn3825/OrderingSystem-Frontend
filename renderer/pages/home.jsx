@@ -6,16 +6,15 @@ function Home() {
   return (
     <React.Fragment>
       <Head>
-        <title>Home - Nextron (with-javascript)</title>
+        <title> Escobar Ordering System </title>
       </Head>
       <div>
         <p>
           ⚡ Electron + Next.js ⚡ -
-          <Link href="/next">
-            <a>Go to next page</a>
+          <Link href="/home">
+            <a> Hiiii</a>
           </Link>
         </p>
-        <img src="/images/logo.png" />
       </div>
     </React.Fragment>
   );
