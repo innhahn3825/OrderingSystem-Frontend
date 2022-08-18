@@ -1,0 +1,16 @@
+@import '../../../styles/variables.scss';
+
+.SidebarCategory{
+    border-radius: 6px;
+    color: white;
+    height: 80px;
+    width: 80px;
+    background-color: white;
+    border: 1px solid black;
+
+    p{
+        font-size: $bodyFontSize;
+        color: black;
+    }
+}
+
