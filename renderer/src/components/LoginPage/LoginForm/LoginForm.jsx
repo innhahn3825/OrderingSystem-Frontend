@@ -20,6 +20,7 @@ const LoginForm = () => {
                       alt="Escobar Logo"
                       width = '100'
                       height = '100'
+                      objectFit="cover"
                   /> 
                   <label className = {styles['Header']}>Login</label>
               </div>

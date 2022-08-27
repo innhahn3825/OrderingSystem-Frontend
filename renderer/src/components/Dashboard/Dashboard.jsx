@@ -1,13 +1,14 @@
 import React from 'react'
 import styles from './Dashboard.module.scss'
 import Image from "next/image";
-import { Sidebar } from "../ComponentIndex";
+import { Sidebar, DashboardBody } from "../ComponentIndex";
+import Link from 'next/link';
 
 const Dashboard= () => {
   return (
         <div className={styles['Dashboard']}>
+            <DashboardBody/>
             <Sidebar/>
-            <h1> hello </h1>
         </div>
 
   )

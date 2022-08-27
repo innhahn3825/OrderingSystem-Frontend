@@ -1,6 +1,6 @@
-@import '../../styles/variables.scss';
+@import '../../../styles/variables.scss';
 
-  .sidenav {
+.MenuSideBar {
     height: 100%;
     width: 150px;
     position: fixed;
@@ -8,24 +8,23 @@
     top: 0;
     left: 0;
     background-color: #fafafa;
+}
 
 
-  }
-
-  .wrapper {
+.wrapper {
     padding:30px;
     z-index: 1;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1rem;
 
-  }
+}
 
-  .img-section {
+.img-section {
     display: flex;
     flex-direction: column;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1rem;
     align-items: center;
     justify-content: center;
-  }
+}

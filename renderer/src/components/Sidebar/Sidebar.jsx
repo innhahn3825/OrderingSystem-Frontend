@@ -6,15 +6,45 @@ import Link from 'next/link';
 
 const Sidebar= () => {
   return (
-
-
       <div className={styles['sidenav']}>
-        <Link href = "/neworder"><SidebarCategory Title = 'New Order'/></Link>
-        <Link href = "/dashboard"><SidebarCategory Title = 'Dashboard'/></Link>
-        <Link href = "/home"><SidebarCategory Title = 'Logout' /></Link>
+        <div className={styles['wrapper']}>
+        </div>
 
+        <div className={styles['img-section']}>
+        <Image
+            src="/images/logo.png" 
+            alt="Escobar Logo"
+            width = '80'
+            height = '80'
+            objectFit='contain'
+        /> 
+        </div>
 
-      </div>
+        <Link href="/neworder">
+        <div className={styles['wrapper']}>
+        <SidebarCategory Title = 'New Order'/>
+        </div>
+        </Link>
+
+        <Link href="/dashboard">
+        <div className={styles['wrapper']}>
+        <SidebarCategory Title = 'Dashboard'/>
+        </div>
+        </Link>
+
+        <Link href="/payment">
+        <div className={styles['wrapper']}>
+        <SidebarCategory Title = 'Payout'/>
+        </div>
+        </Link>
+
+        <Link href="/home">
+        <div className={styles['wrapper']}>
+        <SidebarCategory Title = 'Logout'/>
+        </div>
+        </Link>
+
+        </div>
   )
 }
 

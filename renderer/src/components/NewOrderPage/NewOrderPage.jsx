@@ -1,17 +1,17 @@
 import React from 'react'
 import styles from './NewOrderPage.module.scss'
-import Image from "next/image";
-import { Sidebar } from "../ComponentIndex";
+import { MenuSideBar }  from "../ComponentIndex";
+import Link from 'next/link';
+// import  Menu  from "../ComponentIndex";
 
-const Dashboard= () => {
+
+const NewOrderPage = () => {
   return (
-        <div className={styles['Dashboard']}>
-            <Sidebar/>
-            <h1> hello </h1>
+        <div className={styles['NewOrderPage']}>
+            <MenuSideBar/>
         </div>
 
   )
 }
 
-export default Dashboard
-
+export default NewOrderPage

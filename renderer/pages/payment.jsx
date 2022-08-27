@@ -1,19 +1,19 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import {Dashboard} from '../src/components/ComponentIndex'
+import {PaymentPage} from '../src/components/ComponentIndex'
 
-function dashboard() {
+function Home() {
   return (
     <React.Fragment>
       <Head>
-        <title> Home Page </title>
+        <title> Escobar Ordering System </title>
       </Head>
       <div>
-        <Dashboard/>
+        <PaymentPage/>
       </div>
     </React.Fragment>
   );
 };
 
-export default dashboard;
+export default Home;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import {Dashboard, Sidebar, LoginPage} from '../src/components/ComponentIndex'
+import {NewOrderPage} from '../src/components/ComponentIndex'
 
 function neworder() {
   return (
@@ -10,10 +10,11 @@ function neworder() {
         <title> New Order </title>
       </Head>
       <div>
-        <Sidebar/>
+        <NewOrderPage/>
       </div>
     </React.Fragment>
   );
 };
 
 export default neworder;
+
