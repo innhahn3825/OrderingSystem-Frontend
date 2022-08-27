@@ -1,6 +1,8 @@
 import React from 'react'
 import styles from './MenuCard.module.scss'
 import Image from "next/image";
+import { MenuData } from "../../../../data/DataIndex";
+
 
 const MenuCard = (Price, Title) => {
   return (

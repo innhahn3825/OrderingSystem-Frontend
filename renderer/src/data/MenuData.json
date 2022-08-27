@@ -1,0 +1,70 @@
+{
+    "events":[
+        {
+            "title":"Meals",
+            "items":[
+                {"price":"$3.99", "time":"Quarter Pounder with Cheese"},
+                {"price":"$4.79", "time":"Double Quarter Pounder with Cheese"},
+                {"price":"$4.29", "time":"Double Quarter Pounder with Cheese Deluxe"},
+                {"price":"$3.99", "time":"Big Mac"},
+                {"price":"$1.99", "time":"McDouble"},
+                {"price":"$4.29", "time":"Quarter Pounder with Cheese Bacon"}
+            ]
+        },
+        {
+            "title":"Burgers",
+            "items":[
+                {"price":"$3.99", "time":"Quarter Pounder with Cheese"},
+                {"price":"$4.79", "time":"Double Quarter Pounder with Cheese"},
+                {"price":"$4.29", "time":"Double Quarter Pounder with Cheese Deluxe"},
+                {"price":"$3.99", "time":"Big Mac"},
+                {"price":"$1.99", "time":"McDouble"},
+                {"price":"$4.29", "time":"Quarter Pounder with Cheese Bacon"}
+            ]
+        },
+        {
+            "title":"Sandwiches",
+            "items":[
+                {"price":"$3.99", "time":"Quarter Pounder with Cheese"},
+                {"price":"$4.79", "time":"Double Quarter Pounder with Cheese"},
+                {"price":"$4.29", "time":"Double Quarter Pounder with Cheese Deluxe"},
+                {"price":"$3.99", "time":"Big Mac"},
+                {"price":"$1.99", "time":"McDouble"},
+                {"price":"$4.29", "time":"Quarter Pounder with Cheese Bacon"}
+            ]
+        },
+        {
+            "title":"Sides",
+            "items":[
+                {"price":"$3.99", "time":"Quarter Pounder with Cheese"},
+                {"price":"$4.79", "time":"Double Quarter Pounder with Cheese"},
+                {"price":"$4.29", "time":"Double Quarter Pounder with Cheese Deluxe"},
+                {"price":"$3.99", "time":"Big Mac"},
+                {"price":"$1.99", "time":"McDouble"},
+                {"price":"$4.29", "time":"Quarter Pounder with Cheese Bacon"}
+            ]
+        },
+        {
+            "title":"Drinks",
+            "items":[
+                {"price":"$3.99", "time":"Quarter Pounder with Cheese"},
+                {"price":"$4.79", "time":"Double Quarter Pounder with Cheese"},
+                {"price":"$4.29", "time":"Double Quarter Pounder with Cheese Deluxe"},
+                {"price":"$3.99", "time":"Big Mac"},
+                {"price":"$1.99", "time":"McDouble"},
+                {"price":"$4.29", "time":"Quarter Pounder with Cheese Bacon"}
+            ]
+        },
+        {
+            "title":"Desserts",
+            "items":[
+                {"price":"$3.99", "time":"Quarter Pounder with Cheese"},
+                {"price":"$4.79", "time":"Double Quarter Pounder with Cheese"},
+                {"price":"$4.29", "time":"Double Quarter Pounder with Cheese Deluxe"},
+                {"price":"$3.99", "time":"Big Mac"},
+                {"price":"$1.99", "time":"McDouble"},
+                {"price":"$4.29", "time":"Quarter Pounder with Cheese Bacon"}
+            ]
+        }
+    ]
+}
