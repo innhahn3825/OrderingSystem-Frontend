@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import {Dashboard} from '../src/components/ComponentIndex'
+import { DashboardPage } from '../src/components/ComponentIndex'
 
 function dashboard() {
   return (
@@ -10,7 +10,7 @@ function dashboard() {
         <title> Home Page </title>
       </Head>
       <div>
-        <Dashboard/>
+        <DashboardPage/>
       </div>
     </React.Fragment>
   );
