@@ -3,13 +3,14 @@ import styles from './Menu.module.scss'
 import Image from "next/image";
 import { MenuCard } from "../../ComponentIndex";
 import { MenuData } from "../../../data/DataIndex";
+import shortid from 'shortid';
 
 const Menu = ({menus}) => {
   return (
         <div className={styles['Menu']}>
           {menus && menus.map(menu => {
             return (
-            <div>
+            <div key={shortid.generate()}>
               <div>{menu.menuName}</div>
               <div>Price: {menu.menuPrice}</div>
             </div>)
