@@ -2,11 +2,11 @@ import React from 'react'
 import styles from './MenuSideBar.module.scss'
 import Image from "next/image";
 import { MenuSideBarCategory } from "../../ComponentIndex";
-import { MenuData } from "../../../data/DataIndex";
+// import { MenuData } from "../../../data/DataIndex";
 import Link from 'next/link';
 
 
-const MenuSideBar = () => {
+const MenuSideBar = ({items, categoryOnChange}) => {
   return (
     <div className={styles['MenuSideBar']}>
       <Link href = "/dashboard"> 
@@ -24,10 +24,10 @@ const MenuSideBar = () => {
         /> 
         </div>
 
-        {MenuData.events.map((item) =>{
+        {items.map((item) =>{
             return(
-              <div key={item.title} className={styles['wrapper']}>
-                <MenuSideBarCategory Title = {item.title}/>
+              <div key={item} className={styles['wrapper']} onClick={()=>categoryOnChange(item)}>
+                <MenuSideBarCategory Title={item}/>
               </div>
             )
           })}

@@ -14,8 +14,10 @@
   },
   "dependencies": {
     "@storybook/preset-scss": "^1.0.3",
+    "axios": "^0.27.2",
     "electron-serve": "^1.1.0",
-    "electron-store": "^8.0.1"
+    "electron-store": "^8.0.1",
+    "react-toastify": "^9.0.8"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
