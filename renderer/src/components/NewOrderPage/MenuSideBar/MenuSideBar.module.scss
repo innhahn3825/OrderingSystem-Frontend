@@ -2,18 +2,20 @@
 
 .MenuSideBar {
     height: 100%;
-    width: 9.375rem;
+    width: 175px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
     background-color: #fafafa;
+    overflow: auto;
+    filter: drop-shadow(4px 0px 20px rgba(0, 0, 0, 0.02));
 }
 
 
 .wrapper {
-    padding:30px;
     z-index: 1;
+    padding: 30px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -21,6 +23,13 @@
 
 }
 
+.back-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+}
 .img-section {
     display: flex;
     flex-direction: column;

@@ -1,32 +1,29 @@
 import React from 'react'
 import styles from './MenuCard.module.scss'
 import Image from "next/image";
-import { MenuData } from "../../../../data/DataIndex";
 
-
-const MenuCard = (Price, Title) => {
+const MenuCard = (name, price, servings) => {
   return (
         <div className={styles['MenuCard']}>
-            {/* <MenuSideBar/> */}
-            {/* <div className={styles['Img-Section']}>
-            <Image
-                src={Picture}
-                alt="Escobar Logo"
-                width = '30'
-                height = '30'
-                draggable="false"
-            /> 
-            </div> */}
+                {/* <div className={[styles["SidebarCategory"], isActive && styles["Selected"]].join(" ")}> */}
+
+
+              {/* <div>{menu.menuName}</div>
+              <div>Price: {menu.menuPrice}</div>
+              <div>Servings Left: {menu.numberOfServingsLeft}</div> */}
 
             <div className={styles['Text-Section']}>
-                <p> {Price} </p>
+                <h4> Title: {name} </h4>
             </div>
 
             <div className={styles['Text-Section']}>
-                <p> {Title} </p>
+                <p> Price: {price} </p>
             </div>
 
-        </div>
+            <div className={styles['Text-Section']}>
+                <p>Servings Left: {servings} </p>
+            </div> 
+        </div> 
 
   )
 }

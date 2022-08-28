@@ -3,9 +3,9 @@ import styles from './SidebarCategory.module.scss'
 import Image from "next/image";
 
 
-const SidebarCategory = ({Title}) => {
+const SidebarCategory = ({Title, isActive}) => {
   return (
-    <div className={styles['SidebarCategory']}>
+    <div className={[styles["SidebarCategory"], isActive && styles["Selected"]].join(" ")}>
       <p> {Title} </p>
     </div>
   )

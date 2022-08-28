@@ -4,7 +4,7 @@ import Image from "next/image";
 import { SidebarCategory } from "../ComponentIndex";
 import Link from 'next/link';
 
-const Sidebar= () => {
+const Sidebar= ({page}) => {
   return (
       <div className={styles['sidenav']}>
         <div className={styles['wrapper']}>
@@ -28,13 +28,13 @@ const Sidebar= () => {
 
         <Link href="/dashboard">
         <div className={styles['wrapper']}>
-        <SidebarCategory Title = 'Dashboard'/>
+        <SidebarCategory isActive = {page==="dashboard"} Title = 'Dashboard'/>
         </div>
         </Link>
 
         <Link href="/payment">
         <div className={styles['wrapper']}>
-        <SidebarCategory Title = 'Payout'/>
+        <SidebarCategory isActive = {page==="paymentpage"} Title = 'Payout'/>
         </div>
         </Link>
 

@@ -1,19 +1,10 @@
 @import '../../styles/variables.scss';
 
 .NewOrderPage{
-    // background-color: red;
 }
 
-.Component-Sidebar {
-    padding-left: 0rem;
+.Component {
+    display: flex;
+    margin-left: 175px;
 }
 
-.Component-Menucard {
-    padding-left: 9.375rem;
-
-}
-
-.Component-Ordertab {
-    padding-left: 43.375rem;
-    top: 0;
-}

@@ -9,10 +9,16 @@ const Menu = ({menus}) => {
         <div className={styles['Menu']}>
           {menus && menus.map(menu => {
             return (
-            <div>
-              <div>{menu.menuName}</div>
-              <div>Price: {menu.menuPrice}</div>
-            </div>)
+            
+            <div className={styles['container']}>
+              <div className={styles['wrapper']}>
+                  <h4> Title: {menu.menuName}</h4>
+                  <p> Price: {menu.menuPrice}  </p>
+                  <p>Servings Left: {menu.numberOfServingsLeft} </p>
+              </div> 
+              {/* <MenuCard name = {menu.menuName} price = {menu.menuPrice} servings = {menu.numberOfServingsLeft}/> */}
+            </div>
+            )
           })}
           {/* <MenuCard/> */}
           {/* <h1> hi </h1> */}

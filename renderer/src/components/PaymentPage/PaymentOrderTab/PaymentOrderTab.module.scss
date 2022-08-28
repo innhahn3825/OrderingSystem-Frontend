@@ -1,8 +1,7 @@
 @import '../../../styles/variables.scss';
 
-
-.DashboardBody{ 
+.PaymentOrderTab {
+    width: 30rem;
     background-color: #003049;
-    min-height: 100vh;    
-    padding: 150px;
+    height: 100vh;
 }

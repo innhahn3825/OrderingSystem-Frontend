@@ -1,6 +1,18 @@
 @import '../../../../styles/variables.scss';
 
 
-// .MenuCard {
-    
-// }
+.MenuCard {
+    background-color: white;
+}
+
+.wrapper{
+    border-radius: 6px;
+    color: black;
+    height: 75px;
+    width: 75px;
+    background-color: white;
+    border: 1px solid black;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}

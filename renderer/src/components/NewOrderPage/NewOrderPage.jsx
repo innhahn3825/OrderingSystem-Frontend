@@ -75,19 +75,13 @@ const NewOrderPage = () => {
 
   return (
         <div className={styles['NewOrderPage']}>
-
-
-            <div className={styles['Component-Sidebar']}>
             <MenuSideBar items={activeMenuCategories} categoryOnChange={handleCategoryOnChange}/>
-            </div>
             
-            <div className={styles['Component-Menucard']}>
+            <div className={styles['Component']}>
             <Menu menus={menusBasedOnCategory}/>
-            </div>
-            {/* 
-            <div className={styles['Component-Ordertab']}>
             <MenuOrderTab/>
-            </div> */}
+            </div>
+  
         </div>
 
   )

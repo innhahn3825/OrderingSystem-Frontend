@@ -22,7 +22,10 @@ export { default as MenuSideBarCategory } from "./NewOrderPage/MenuSideBar/MenuS
 export { default as DashboardBody } from "./Dashboard/DashboardBody/DashboardBody.jsx";
 
 // export { default as PaymentPageOrderTab } from "./PaymentPage/PaymentPage/PaymentPageOrderTab.jsx";
-export { default as PaymentPageBody } from "./PaymentPage/PaymentPageBody/PaymentPageBody.jsx";
 
 export { default as MenuOrderTab } from "./NewOrderPage/MenuOrderTab/MenuOrderTab.jsx"
 export { default as MenuOrderTabCard } from "./NewOrderPage/MenuOrderTab/MenuOrderTabCard/MenuOrderTabCard.jsx"
+
+export { default as PaymentPageBody } from "./PaymentPage/PaymentPageBody/PaymentPageBody.jsx";
+export { default as PaymentOrderTab } from "./PaymentPage/PaymentOrderTab/PaymentOrderTab.jsx"
+export { default as PaymentOrderTabCard } from "./PaymentPage/PaymentOrderTab/PaymentOrderTabCard.jsx/PaymentOrderTabCard.jsx"

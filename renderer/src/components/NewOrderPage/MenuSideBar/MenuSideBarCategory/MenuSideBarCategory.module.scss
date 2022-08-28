@@ -4,12 +4,15 @@
     border-radius: 6px;
     color: black;
     height: 80px;
-    width: 80px;
+    width: 100px;
     background-color: white;
     border: 1px solid black;
     align-items: center;
     display: flex;
     justify-content: center;
+    flex-direction: row;
+    padding: 15px 0px;
+    gap: 10px;
     
 
     // .MenuSidebarCategory:active{
@@ -21,7 +24,9 @@
     // }
 
     p{
-        font-size: $bodyFontSize;
-        color: black;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: #121212;
     }
 }

@@ -9,9 +9,9 @@ const Dashboard= () => {
         <div className={styles['Dashboard']}>
 
           <div className={styles['Component']}>
-              <Sidebar/>
+              <Sidebar page = "dashboard"/>
           </div>
-          
+
           <div className={styles['Component']}>
             <DashboardBody/>
           </div>

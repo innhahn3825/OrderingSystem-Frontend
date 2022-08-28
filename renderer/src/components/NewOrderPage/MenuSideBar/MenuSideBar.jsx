@@ -10,8 +10,15 @@ const MenuSideBar = ({items, categoryOnChange}) => {
   return (
     <div className={styles['MenuSideBar']}>
       <Link href = "/dashboard"> 
-        <div>
-        <p> Return </p>
+        <div className={styles['back-section']} >
+        <Image
+            src="/images/arrow-left.svg" 
+            alt="Escobar Logo"
+            width = '24'
+            height = '24'
+            objectFit='contain'
+        /> 
+        <p> Back </p>
         </div>
         </Link>
         <div className={styles['img-section']}>
