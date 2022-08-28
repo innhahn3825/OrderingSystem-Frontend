@@ -2,5 +2,14 @@
 
 
 .Menu {
-    background-color: blue;
+    background-color: #003049;
+    width: 35rem;
+    height: 300rem;
+}
+
+.wrapper {
+    padding:30px;
+    z-index: 1;
+    display: flex;
+    padding-bottom: 0.5rem;
 }
