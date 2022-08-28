@@ -7,8 +7,16 @@ import Link from 'next/link';
 const Dashboard= () => {
   return (
         <div className={styles['Dashboard']}>
+
+          <div className={styles['Component']}>
+              <Sidebar/>
+          </div>
+          
+          <div className={styles['Component']}>
             <DashboardBody/>
-            <Sidebar/>
+          </div>
+
+
         </div>
 
   )

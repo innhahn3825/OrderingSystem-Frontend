@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 import styles from './NewOrderPage.module.scss'
-import { MenuSideBar }  from "../ComponentIndex";
+import { MenuSideBar, Menu, MenuOrderTab }  from "../ComponentIndex";
+import { MenuData } from "../../data/DataIndex";
+
 import Link from 'next/link';
 // import  Menu  from "../ComponentIndex";
 import Rest from '../../rest/Rest.tsx';
@@ -73,8 +75,19 @@ const NewOrderPage = () => {
 
   return (
         <div className={styles['NewOrderPage']}>
+
+
+            <div className={styles['Component-Sidebar']}>
             <MenuSideBar items={activeMenuCategories} categoryOnChange={handleCategoryOnChange}/>
-            <MenuPage menus={menusBasedOnCategory}/>
+            </div>
+            
+            <div className={styles['Component-Menucard']}>
+            <Menu menus={menusBasedOnCategory}/>
+            </div>
+            {/* 
+            <div className={styles['Component-Ordertab']}>
+            <MenuOrderTab/>
+            </div> */}
         </div>
 
   )

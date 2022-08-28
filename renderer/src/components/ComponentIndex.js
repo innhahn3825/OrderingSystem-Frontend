@@ -24,3 +24,5 @@ export { default as DashboardBody } from "./Dashboard/DashboardBody/DashboardBod
 // export { default as PaymentPageOrderTab } from "./PaymentPage/PaymentPage/PaymentPageOrderTab.jsx";
 export { default as PaymentPageBody } from "./PaymentPage/PaymentPageBody/PaymentPageBody.jsx";
 
+export { default as MenuOrderTab } from "./NewOrderPage/MenuOrderTab/MenuOrderTab.jsx"
+export { default as MenuOrderTabCard } from "./NewOrderPage/MenuOrderTab/MenuOrderTabCard/MenuOrderTabCard.jsx"
