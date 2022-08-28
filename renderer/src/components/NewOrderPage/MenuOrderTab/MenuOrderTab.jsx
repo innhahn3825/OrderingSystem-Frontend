@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './MenuOrderTab.module.scss'
 import Image from "next/image";
 import { MenuOrderTabCard } from "../../ComponentIndex";
-
+import {MenuOrderTabaData} from "../../../data/DataIndex"
 const MenuOrderTab = () => {
   return (
         <div className={styles['MenuOrderTab']}>
@@ -21,6 +21,7 @@ const MenuOrderTab = () => {
           {/* {menus && menus.map(menu => {
             return (
             <div>
+              
               <div>{menu.menuName}</div>
               <div>Price: {menu.menuPrice}</div>
               <div>Servings Left: {menu.numberOfServingsLeft}</div>

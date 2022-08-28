@@ -11,7 +11,7 @@ const LoginForm = ({ account, usernameOnChange, passwordOnChange, loginOnClick }
   // }
   return (
     <div className={styles["Container"]}>
-      <form action="/send-data-here" method="post" className={styles["Form"]}>
+      <div className={styles["Form"]}>
         <div className={styles["Inside-Login-Form"]}>
           <div className={styles["Image-Section"]}>
             <Image
@@ -54,13 +54,13 @@ const LoginForm = ({ account, usernameOnChange, passwordOnChange, loginOnClick }
             />
           </div>
 
-          <Link href="/dashboard">
-            <button type="submit" className={styles["Button"]} onClick={loginOnClick}>
+          {/* <Link href="/dashboard"> */}
+            <button className={styles["Button"]} onClick={loginOnClick}>
               Login
             </button>
-          </Link>
+          {/* </Link> */}
         </div>
-      </form>
+      </div>
     </div>
   );
 };

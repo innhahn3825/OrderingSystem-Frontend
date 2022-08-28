@@ -12,7 +12,7 @@ const LoginPage = () => {
 
   const [account, setAccount] = useState(new AccountLogin("", "", ""));
 
-  // const router = useRouter();
+  const router = useRouter();
   const rest = new Rest();
 
   const handleUsernameOnChange = (event) => {
@@ -26,16 +26,16 @@ const LoginPage = () => {
   const successfullLoginActions = (employeeName) => {
     localStorage.setItem("username", employeeName);
     console.log(employeeName);
-    // router.replace("/dashboard");
+    router.replace("/dashboard");
   };
 
   const handleLoginOnClick = () => {
-    // rest.login(
-    //   `${INITIAL_URL}/login`,
-    //   account.toJson(),
-    //   successfullLoginActions,
-    //   `Successfully Logged In`
-    // );
+    rest.login(
+      `${INITIAL_URL}/login`,
+      account.toJson(),
+      successfullLoginActions,
+      `Successfully Logged In`
+    );
   };
 
   return (
