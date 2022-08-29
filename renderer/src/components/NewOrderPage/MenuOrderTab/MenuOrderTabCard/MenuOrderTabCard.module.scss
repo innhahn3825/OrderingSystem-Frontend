@@ -43,7 +43,14 @@
         padding: 10px;
         gap: 5px;
     }
-
+    button{
+        background-color: white;
+        border: 1px solid white;
+    }
+    button:active{
+        display: flex;
+        transform: scale(1);    
+    }
 
 }
 
@@ -73,5 +80,14 @@
         display: flex;
         align-items: flex-end;
         padding-bottom: 10px;
+
+        button{
+            background-color: white;
+            border: 1px solid white;
+        }
+        button:active{
+            display: flex;
+            transform: scale(1);    
+        }
     }
 }

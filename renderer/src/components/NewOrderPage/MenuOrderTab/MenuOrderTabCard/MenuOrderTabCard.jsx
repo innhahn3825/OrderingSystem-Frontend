@@ -11,6 +11,7 @@ const MenuOrderTabCard = ({title, price, quantity}) => {
             <div className={styles['Title-Section']}>
               <h2> {title}</h2>
                 <div className={styles['Counter-Section']}>
+                <button>
                 <Image
                   src="/images/counter.svg"
                   alt="delete icon"
@@ -18,27 +19,32 @@ const MenuOrderTabCard = ({title, price, quantity}) => {
                   height="25"
                   objectFit="cover"
                 />  
+                </button>
                 <h2> {quantity} </h2>
+                <button>
                 <Image
                   src="/images/counter-add.svg"
                   alt="delete icon"
                   width="25"
                   height="25"
                   objectFit="cover"
-                />              
+                />      
+                </button>
               </div>
             </div>
 
             <div className={styles['Price-Section']}>
               <p> {price}</p>
                 <div className={styles['Remove-Section']}>
-                  <Image
-                    src="/images/remove.svg"
-                    alt="delete icon"
-                    width="15"
-                    height="15"
-                    objectFit="cover"
-                  />             
+                  <button>
+                    <Image
+                      src="/images/remove.svg"
+                      alt="delete icon"
+                      width="15"
+                      height="15"
+                      objectFit="cover"
+                    />  
+                  </button>           
                 </div>
             </div>
 

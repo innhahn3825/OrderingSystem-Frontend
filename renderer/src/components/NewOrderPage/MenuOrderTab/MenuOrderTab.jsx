@@ -1,6 +1,8 @@
 import React from 'react'
 import styles from './MenuOrderTab.module.scss'
 import Image from "next/image";
+// import { useState } from React;
+import Link from "next/link";
 import { MenuOrderTabCard } from "../../ComponentIndex";
 import {MenuOrderTabData} from "../../../data/DataIndex"
 const MenuOrderTab = () => {
@@ -8,13 +10,15 @@ const MenuOrderTab = () => {
         <div className={styles['MenuOrderTab']}>
           <div className={styles['txt-section']}>
           <h3> New Order </h3>
+          <button>
           <Image
               src="/images/delete.svg"
               alt="delete icon"
               width="20"
               height="20"
               objectFit="cover"
-            />          
+            />  
+          </button>        
             </div>
 
           <div className={styles['container-section']}>
@@ -40,6 +44,8 @@ const MenuOrderTab = () => {
 
           <div className={styles['total-section']}>
             <h1> $16.25 </h1>
+            
+            <Link href = "/payment">
             <div className={styles['pay-section']}>
             <h2> Pay </h2>
             <Image
@@ -50,6 +56,7 @@ const MenuOrderTab = () => {
               objectFit="cover"
             />          
             </div>
+            </Link>
           </div>
 
         </div>

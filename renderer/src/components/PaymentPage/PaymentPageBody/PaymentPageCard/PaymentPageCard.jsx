@@ -14,6 +14,7 @@ const PaymentPageCard = ({ordernum, quantity, price}) => {
 
                 <div className={styles['Price-Section']}>
                     <h3> {price} </h3>
+                    <button> Void </button>
                 </div>
             </div>
         </div>
