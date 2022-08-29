@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './MenuOrderTab.module.scss'
 import Image from "next/image";
 import { MenuOrderTabCard } from "../../ComponentIndex";
-import {MenuOrderTabaData} from "../../../data/DataIndex"
+import {MenuOrderTabData} from "../../../data/DataIndex"
 const MenuOrderTab = () => {
   return (
         <div className={styles['MenuOrderTab']}>
@@ -17,7 +17,7 @@ const MenuOrderTab = () => {
             />          
             </div>
 
-          <div className={styles['img-section']}>
+          <div className={styles['container-section']}>
           {/* {menus && menus.map(menu => {
             return (
             <div>
@@ -28,7 +28,30 @@ const MenuOrderTab = () => {
               
             </div>)
           })} */}
+            {MenuOrderTabData.events.map((item) =>{
+            return(
+              <div key={item.title}>
+                <MenuOrderTabCard title={item.title} price ={item.price} quantity ={item.quantity}/>
+              </div>
+            )
+          })}
+            
           </div>
+
+          <div className={styles['total-section']}>
+            <h1> $16.25 </h1>
+            <div className={styles['pay-section']}>
+            <h2> Pay </h2>
+            <Image
+              src="/images/chevron.svg"
+              alt="delete icon"
+              width="20"
+              height="20"
+              objectFit="cover"
+            />          
+            </div>
+          </div>
+
         </div>
 
   )

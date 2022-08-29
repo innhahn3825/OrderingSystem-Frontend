@@ -2,23 +2,29 @@
     "events":[
         {
             "title":"Quarter Pounder with Cheese Deluxe",
-            "items":"$4.29"
+            "price":"$4.29",
+            "quantity":"1"
         },
         {
             "title":"MCDouble",
-            "items":"$1.99"
+            "price":"$1.99",
+            "quantity":"2"
         },
         {
             "title":"Large Fries",
-            "items":"$2.99"
+            "price":"$2.99",
+            "quantity":"3"
+            
         },
         {
             "title":"Medium Soda",
-            "items":"$1.99"
+            "price":"$1.99",
+            "quantity":"1"
         },
         {
             "title":"M&Ms McFlurry",
-            "items":"$3.99"
+            "price":"$3.99",
+            "quantity":"5"
         }
     ]
 }

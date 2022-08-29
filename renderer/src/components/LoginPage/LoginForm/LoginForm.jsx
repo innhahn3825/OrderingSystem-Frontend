@@ -54,11 +54,11 @@ const LoginForm = ({ account, usernameOnChange, passwordOnChange, loginOnClick }
             />
           </div>
 
-          {/* <Link href="/dashboard"> */}
+          <Link href="/dashboard">
             <button className={styles["Button"]} onClick={loginOnClick}>
               Login
             </button>
-          {/* </Link> */}
+          </Link>
         </div>
       </div>
     </div>

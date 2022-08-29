@@ -1,0 +1,67 @@
+@import '../../../../styles/variables.scss';
+.PaymentPageCard{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 10px;
+    gap: 20px;
+    background-color:white;
+    width: 450px;
+    height: 98px;
+    
+}
+
+.First-Section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 20px;
+
+    h3{
+        font-family: 'SF Pro Text';
+        font-style: bold;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 14px;
+    }
+}
+
+.Second-Section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+
+    .Quantity-Section{
+        display: flex;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 10px;
+
+        h3{
+            font-family: 'SF Pro Text';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 14px;
+        }
+    }
+    .Price-Section{
+        display: flex;
+        justify-content: flex-end;
+        padding: 0px;
+        gap: 20px;
+        h3{
+            font-family: 'SF Pro Text';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 14px;
+        }
+    }
+}
+

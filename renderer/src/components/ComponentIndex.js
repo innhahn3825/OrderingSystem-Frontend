@@ -29,3 +29,4 @@ export { default as MenuOrderTabCard } from "./NewOrderPage/MenuOrderTab/MenuOrd
 export { default as PaymentPageBody } from "./PaymentPage/PaymentPageBody/PaymentPageBody.jsx";
 export { default as PaymentOrderTab } from "./PaymentPage/PaymentOrderTab/PaymentOrderTab.jsx"
 export { default as PaymentOrderTabCard } from "./PaymentPage/PaymentOrderTab/PaymentOrderTabCard.jsx/PaymentOrderTabCard.jsx"
+export { default as PaymentPageCard } from "./PaymentPage/PaymentPageBody/PaymentPageCard/PaymentPageCard.jsx"

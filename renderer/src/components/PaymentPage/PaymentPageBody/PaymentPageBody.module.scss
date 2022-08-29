@@ -1,8 +1,17 @@
 @import '../../../styles/variables.scss';
 
 .PaymentPageBody {
-    background-color: red;
     width: 100%;
     height: 100vh;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 30px;
+    flex-basis: auto;
+    flex-wrap: wrap;
+    padding: 10px;
 
 }
+
