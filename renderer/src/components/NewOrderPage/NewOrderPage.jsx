@@ -2,14 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 import styles from './NewOrderPage.module.scss'
 import { MenuSideBar, Menu, MenuOrderTab }  from "../ComponentIndex";
-import { MenuData } from "../../data/DataIndex";
+// import { MenuData } from "../../data/DataIndex";
 
-import Link from 'next/link';
-// import  Menu  from "../ComponentIndex";
 import Rest from '../../rest/Rest.tsx';
 import MenuOnCategory from '../../models/MenuOnCategory.tsx';
 import OrderMenu from '../../models/OrderMenu.tsx';
-import MenuPage from "./MenuPage/Menu";
 
 const INITIAL_URL = "http://localhost:8080/api/v1";
 

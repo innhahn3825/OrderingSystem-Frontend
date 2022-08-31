@@ -6,7 +6,7 @@ const PaymentOrderTabCard = ({title, quantity}) => {
     <div className={styles['PaymentOrderTabCard']}>
         <h2> {title} </h2>
         <h2> {quantity} </h2>
-
+      
 
     </div>
   )

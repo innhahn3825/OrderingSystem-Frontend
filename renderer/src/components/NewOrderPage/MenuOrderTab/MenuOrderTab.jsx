@@ -1,11 +1,74 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styles from './MenuOrderTab.module.scss'
 import Image from "next/image";
-// import { useState } from React;
 import Link from "next/link";
-import { MenuOrderTabCard } from "../../ComponentIndex";
-import {MenuOrderTabData} from "../../../data/DataIndex"
+// import { MenuOrderTabCard } from "../../ComponentIndex";
+// import {MenuOrderTabData} from "../../../data/DataIndex"
+// import MenuOnCategory from '../../models/MenuOnCategory.tsx';
+// import OrderMenu from '../../models/OrderMenu.tsx';
+
+// import Rest from '../../rest/Rest.tsx';
+
 const MenuOrderTab = () => {
+
+    // const rest = new Rest();
+  
+    // const [activeMenuCategories, setActiveMenuCategories] = useState([]);
+  
+    // const[orderCart, setOrderCart] = useState(new OrderMenu(1, "", 1, 1, "", [], 1, false));
+  
+    // const[menusBasedOnCategory, setMenusBasedOnCategory] = useState([]);
+    // const[menuOnCategory, setMenuOnCategory] = useState(new MenuOnCategory("", []));
+  
+    
+  
+    // const handleActiveMenuCategoriesLoad = (data) => {
+    //   setActiveMenuCategories(data);
+    // };
+  
+    // const getAllActiveMenuCategories = () => {
+    //   rest.get(`${INITIAL_URL}/menu-category`, handleActiveMenuCategoriesLoad);
+    // };
+  
+    // const handleMenusBasedOnCategoryLoad = (data) => {
+    //   setMenusBasedOnCategory(data);
+    // }
+  
+    // const getAllMenusBasedOnCategory = () => {
+  
+    //   rest.getMenuBasedOnCategory(
+    //     `${INITIAL_URL}/orders/menu-on-category`,
+    //     menuOnCategory.toJson(),
+    //     handleMenusBasedOnCategoryLoad
+    //   );
+    // };
+  
+    // const handleCategoryOnChange = (newCategory) => {
+    //   setMenuOnCategory(
+    //     new MenuOnCategory(
+    //       newCategory,
+    //       menuOnCategory.orderMenu
+    //     )
+    //   );
+    // }
+  
+    // useEffect(() => {
+    //   getAllActiveMenuCategories();
+    // }, []);
+  
+    // useEffect(() => {
+    //   getAllMenusBasedOnCategory();
+    // }, [menuOnCategory]);
+  
+    // useEffect(() => {
+    //   setMenuOnCategory(
+    //     new MenuOnCategory(
+    //       activeMenuCategories[0],
+    //       menuOnCategory.orderMenu
+    //     )
+    //   );
+    // }, [activeMenuCategories]);
+
   return (
         <div className={styles['MenuOrderTab']}>
           <div className={styles['txt-section']}>
@@ -22,23 +85,16 @@ const MenuOrderTab = () => {
             </div>
 
           <div className={styles['container-section']}>
-          {/* {menus && menus.map(menu => {
-            return (
-            <div>
-              
-              <div>{menu.menuName}</div>
-              <div>Price: {menu.menuPrice}</div>
-              <div>Servings Left: {menu.numberOfServingsLeft}</div>
-              
-            </div>)
-          })} */}
-            {MenuOrderTabData.events.map((item) =>{
+
+            {/* {MenuOrderTabData.events.map((item) =>{
             return(
               <div key={item.title}>
                 <MenuOrderTabCard title={item.title} price ={item.price} quantity ={item.quantity}/>
               </div>
             )
-          })}
+          })} */}
+
+          {}
             
           </div>
 

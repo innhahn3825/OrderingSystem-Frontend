@@ -33,14 +33,36 @@
         font-size: 16px;
         line-height: 19px;
     }
-    p{
+
+    .servings{
         font-family: 'SF Pro Text';
         font-style: normal;
         font-weight: 500;
         font-size: 16px;
         line-height: 19px;
     }
+
+    .servings--selected{
+        font-family: 'SF Pro Text';
+        font-style: normal;
+        font-weight: 0;
+        font-size: 0px;
+        line-height: 0px;
+        visibility: hidden;
+    }
+    .servings--selected::after{
+        font-family: 'SF Pro Text';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        visibility: visible;
+        content: 'Out of Stock';
+        display: flex;
+        flex-wrap:wrap;
+    }
 }
+
 
 .wrapper:active{
     border-radius: 6px;

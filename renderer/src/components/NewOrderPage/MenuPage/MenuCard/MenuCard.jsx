@@ -6,10 +6,10 @@ const MenuCard = ({name, price, servings}) => {
   return (
         <div className={styles['MenuCard']}>
                 {/* <div className={[styles["SidebarCategory"], isActive && styles["Selected"]].join(" ")}> */}
-                <div className={styles['wrapper']}>
+                <div className={styles["wrapper"]}>
                     <p> ${price}  </p>
                     <h1> {name}</h1>
-                    <p>Servings Left: {servings} </p>
+                    <p className={[styles["servings"], servings===0 && styles["servings--selected"]].join(" ")}>Servings Left: {servings} </p>
             </div>
         </div> 
 
