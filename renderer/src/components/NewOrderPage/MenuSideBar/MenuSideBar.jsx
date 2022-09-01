@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import styles from './MenuSideBar.module.scss'
 import Image from "next/image";
 import { MenuSideBarCategory } from "../../ComponentIndex";
@@ -6,7 +6,15 @@ import { MenuSideBarCategory } from "../../ComponentIndex";
 import Link from 'next/link';
 
 
-const MenuSideBar = ({items, categoryOnChange}) => {
+const MenuSideBar = ({items, categoryOnChange, currentMenuCategory}) => {
+
+  // const [currentMenuCategory, setCurrentMenuCategory] = useState(items[0]);
+
+  // const categoryOnChange = (category) => {
+
+  //   setCurrentMenuCategory(category);
+  // }
+
   return (
     <div className={styles['MenuSideBar']}>
       <Link href = "/dashboard"> 
@@ -34,7 +42,7 @@ const MenuSideBar = ({items, categoryOnChange}) => {
         {items.map((item) =>{
             return(
               <div key={item} className={styles['wrapper']} onClick={()=>categoryOnChange(item)}>
-                <MenuSideBarCategory Title={item}/>
+                <MenuSideBarCategory Title={item} isSelected={item === currentMenuCategory}/>
               </div>
             )
           })}

@@ -16,15 +16,55 @@ const NewOrderPage = () => {
 
   const [activeMenuCategories, setActiveMenuCategories] = useState([]);
 
+  const [currentMenuCategory, setCurrentMenuCategory] = useState();
+
   const[orderCart, setOrderCart] = useState(new OrderMenu(1, "", 1, 1, "", [], 1, false));
 
   const[menusBasedOnCategory, setMenusBasedOnCategory] = useState([]);
   const[menuOnCategory, setMenuOnCategory] = useState(new MenuOnCategory("", []));
 
-  
+  const handleCartChange = (newMenu) => {
+    newMenu.orderMenuQuantity = 1;
+    const isNewMenuExisting = false;
+    const newMenuOnCategory = menuOnCategory.orderMenu.map((currentMenu)=> {
+      if (currentMenu.menuName === newMenu.menuName){
+        currentMenu.orderMenuQuantity += 1;
+        isNewMenuExisting = true;
+      }
+
+      return currentMenu;
+    
+    });
+    
+    if (!isNewMenuExisting){
+      newMenuOnCategory.push(newMenu);
+    }
+
+    setMenuOnCategory(
+      new MenuOnCategory(
+        menuOnCategory.menuCategoryName,
+        newMenuOnCategory
+      )
+    );
+  };
+
+  const handleQuantityOnChange = (name, quantityToAdd) => {
+
+    const newMenuOnCategory = menuOnCategory.orderMenu.map((currentMenu)=> {
+      if (currentMenu.menuName === name){
+        currentMenu.orderMenuQuantity += quantityToAdd;
+      }
+      return currentMenu;
+    });
+    setMenuOnCategory(new MenuOnCategory(
+      menuOnCategory.menuCategoryName,
+      newMenuOnCategory
+    ));
+  }
 
   const handleActiveMenuCategoriesLoad = (data) => {
     setActiveMenuCategories(data);
+    setCurrentMenuCategory(data[0]);
   };
 
   const getAllActiveMenuCategories = () => {
@@ -45,6 +85,7 @@ const NewOrderPage = () => {
   };
 
   const handleCategoryOnChange = (newCategory) => {
+    setCurrentMenuCategory(newCategory);
     setMenuOnCategory(
       new MenuOnCategory(
         newCategory,
@@ -58,6 +99,7 @@ const NewOrderPage = () => {
   }, []);
 
   useEffect(() => {
+    console.log(menuOnCategory);
     getAllMenusBasedOnCategory();
   }, [menuOnCategory]);
 
@@ -71,17 +113,26 @@ const NewOrderPage = () => {
   }, [activeMenuCategories]);
 
   return (
-        <div className={styles['NewOrderPage']}>
-            <MenuSideBar items={activeMenuCategories} categoryOnChange={handleCategoryOnChange}/>
-            
-            <div className={styles['Component']}>
-            <Menu menus={menusBasedOnCategory}/>
-            <MenuOrderTab/>
-            </div>
-  
-        </div>
+    <div className={styles["NewOrderPage"]}>
+      <MenuSideBar
+        items={activeMenuCategories}
+        categoryOnChange={handleCategoryOnChange}
+        currentMenuCategory={currentMenuCategory}
+      />
 
-  )
+      <div className={styles["Component"]}>
+        <Menu menus={menusBasedOnCategory} cartOnChange={handleCartChange} />
+        <MenuOrderTab
+          menuOnCategory={menuOnCategory}
+          handleQuantityOnChange={handleQuantityOnChange}
+        />
+      </div>
+
+      {/* <div className={styles['Component-Ordertab']}>
+              <MenuOrderTab/>
+            </div> */}
+    </div>
+  );
 }
 
-export default NewOrderPage
+export default NewOrderPage;

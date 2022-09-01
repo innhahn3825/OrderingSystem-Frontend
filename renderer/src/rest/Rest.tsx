@@ -73,15 +73,13 @@ class Rest {
   login(
     url: string,
     body: Object,
-    handleSuccessAction: Function,
-    successMessage: string
+    handleSuccessAction: Function
   ) {
     axios
       .post(url, body)
       .then(function (response) {
         if (response.status === 200) {
           handleSuccessAction(response.data.employeeName);
-          toast.success(successMessage);
         }
       })
       .catch(function (error) {

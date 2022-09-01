@@ -14,11 +14,15 @@
     padding: 15px 0px;
     gap: 10px;
 
+    &--selected{
+        background-color: #003049;
+        color: white;
+    }
+
 
     p{
         font-weight: 500;
         font-size: 16px;
         line-height: 19px;
-        color: #121212;
     }
 }
