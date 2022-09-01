@@ -3,7 +3,7 @@ import styles from './MenuOrderTab.module.scss'
 import Image from "next/image";
 import Link from "next/link";
 import { MenuOrderTabCard } from "../../ComponentIndex";
-// import {MenuOrderTabData} from "../../../data/DataIndex"
+import {MenuOrderTabData} from "../../../data/DataIndex"
 // import MenuOnCategory from '../../models/MenuOnCategory.tsx';
 // import OrderMenu from '../../models/OrderMenu.tsx';
 
@@ -12,7 +12,7 @@ import { MenuOrderTabCard } from "../../ComponentIndex";
 const MenuOrderTab = () => {
 
     // const rest = new Rest();
-    
+    // 
     // const[orderCart, setOrderCart] = useState(new OrderMenu(1, "", 1, 1, "", [], 1, false));
   
     // const handleMenusBasedOnCategoryLoad = (data) => {
@@ -58,13 +58,13 @@ const MenuOrderTab = () => {
 
           <div className={styles['container-section']}>
 
-            {/* {MenuOrderTabData.events.map((item) =>{
+            {MenuOrderTabData.events.map((item) =>{
             return(
               <div key={item.title}>
                 <MenuOrderTabCard title={item.title} price ={item.price} quantity ={item.quantity}/>
               </div>
             )
-          })} */}
+          })}
 
           {}
             

@@ -21,7 +21,7 @@ const Menu = ({menus}) => {
         <div className={styles['Menu']}>
           {menus && menus.map(menu => {
             return (
-              <div onClick="setOrderCart">
+              <div>
                 {/* {ordercart} = {1, {menu.menuName}, 1,  {menu.menuPrice}, [menu.numberOfServingsLeft], 1, false} */}
                 <MenuCard name = {menu.menuName} price ={menu.menuPrice} servings ={menu.numberOfServingsLeft} />
               </div>
