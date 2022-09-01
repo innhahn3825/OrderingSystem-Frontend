@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import styles from './MenuOrderTab.module.scss'
 import Image from "next/image";
 import Link from "next/link";
-// import { MenuOrderTabCard } from "../../ComponentIndex";
+import { MenuOrderTabCard } from "../../ComponentIndex";
 // import {MenuOrderTabData} from "../../../data/DataIndex"
 // import MenuOnCategory from '../../models/MenuOnCategory.tsx';
 // import OrderMenu from '../../models/OrderMenu.tsx';
@@ -12,23 +12,8 @@ import Link from "next/link";
 const MenuOrderTab = () => {
 
     // const rest = new Rest();
-  
-    // const [activeMenuCategories, setActiveMenuCategories] = useState([]);
-  
-    // const[orderCart, setOrderCart] = useState(new OrderMenu(1, "", 1, 1, "", [], 1, false));
-  
-    // const[menusBasedOnCategory, setMenusBasedOnCategory] = useState([]);
-    // const[menuOnCategory, setMenuOnCategory] = useState(new MenuOnCategory("", []));
-  
     
-  
-    // const handleActiveMenuCategoriesLoad = (data) => {
-    //   setActiveMenuCategories(data);
-    // };
-  
-    // const getAllActiveMenuCategories = () => {
-    //   rest.get(`${INITIAL_URL}/menu-category`, handleActiveMenuCategoriesLoad);
-    // };
+    // const[orderCart, setOrderCart] = useState(new OrderMenu(1, "", 1, 1, "", [], 1, false));
   
     // const handleMenusBasedOnCategoryLoad = (data) => {
     //   setMenusBasedOnCategory(data);
@@ -43,22 +28,9 @@ const MenuOrderTab = () => {
     //   );
     // };
   
-    // const handleCategoryOnChange = (newCategory) => {
-    //   setMenuOnCategory(
-    //     new MenuOnCategory(
-    //       newCategory,
-    //       menuOnCategory.orderMenu
-    //     )
-    //   );
-    // }
-  
     // useEffect(() => {
     //   getAllActiveMenuCategories();
     // }, []);
-  
-    // useEffect(() => {
-    //   getAllMenusBasedOnCategory();
-    // }, [menuOnCategory]);
   
     // useEffect(() => {
     //   setMenuOnCategory(

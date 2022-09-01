@@ -15,8 +15,8 @@
     align-items: center;
 }
 
-.container {
-    height: auto;
+.Container {
+    width: 500px;
     border: 1px solid black;
     justify-content: center;
     display: flex;
@@ -24,7 +24,7 @@
     height: 70vh;
     vertical-align: middle;
     text-align: middle;
-    flex-direction: column;
+    flex-direction: column;    
 }
 
 .Form {

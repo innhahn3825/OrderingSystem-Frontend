@@ -41,12 +41,12 @@ const LoginPage = () => {
   return (
     <div className={styles["LoginPage"]}>
       <Toast />
-      <LoginForm
-        account={account}
-        usernameOnChange={handleUsernameOnChange}
-        passwordOnChange={handlePasswordOnChange}
-        loginOnClick={handleLoginOnClick}
-      />
+          <LoginForm
+            account={account}
+            usernameOnChange={handleUsernameOnChange}
+            passwordOnChange={handlePasswordOnChange}
+            loginOnClick={handleLoginOnClick}
+          />
     </div>
   );
 }
