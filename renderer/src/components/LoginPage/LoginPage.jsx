@@ -34,7 +34,6 @@ const LoginPage = () => {
       `${INITIAL_URL}/login`,
       account.toJson(),
       successfullLoginActions,
-      `Successfully Logged In`
     );
   };
 

@@ -5,4 +5,23 @@
     background-color: #003049;
     min-height: 100vh;    
     padding: 150px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+
+    .Clock--Container{
+        display: flex;
+        background-color: white;
+        border-radius: 50%;
+        color: black;
+        size: 10px;
+        gap: 2rem;
+        align-items: center;
+    }
 }
+
+.Container{
+    margin-bottom: 30px;
+    align-items: center;
+}  

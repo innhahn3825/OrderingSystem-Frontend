@@ -5,9 +5,9 @@ import Link from 'next/link';
 import { MenuData } from "../../../../data/DataIndex";
 
 
-const MenuSideBarCategory = ({Title}) => {
+const MenuSideBarCategory = ({Title, isSelected}) => {
   return (
-        <div className={styles['MenuSideBarCategory']}>
+        <div className={[styles['MenuSideBarCategory'], isSelected && styles["MenuSideBarCategory--selected"]].join(" ")}>
             <p> {Title} </p>
         </div>
 

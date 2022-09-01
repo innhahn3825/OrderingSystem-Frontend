@@ -4,42 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { MenuOrderTabCard } from "../../ComponentIndex";
 import {MenuOrderTabData} from "../../../data/DataIndex"
-// import MenuOnCategory from '../../models/MenuOnCategory.tsx';
-// import OrderMenu from '../../models/OrderMenu.tsx';
+import shortid from 'shortid';
 
-// import Rest from '../../rest/Rest.tsx';
 
-const MenuOrderTab = () => {
+const MenuOrderTab = ({menuOnCategory, handleQuantityOnChange}) => {
 
-    // const rest = new Rest();
-    // 
-    // const[orderCart, setOrderCart] = useState(new OrderMenu(1, "", 1, 1, "", [], 1, false));
-  
-    // const handleMenusBasedOnCategoryLoad = (data) => {
-    //   setMenusBasedOnCategory(data);
-    // }
-  
-    // const getAllMenusBasedOnCategory = () => {
-  
-    //   rest.getMenuBasedOnCategory(
-    //     `${INITIAL_URL}/orders/menu-on-category`,
-    //     menuOnCategory.toJson(),
-    //     handleMenusBasedOnCategoryLoad
-    //   );
-    // };
-  
-    // useEffect(() => {
-    //   getAllActiveMenuCategories();
-    // }, []);
-  
-    // useEffect(() => {
-    //   setMenuOnCategory(
-    //     new MenuOnCategory(
-    //       activeMenuCategories[0],
-    //       menuOnCategory.orderMenu
-    //     )
-    //   );
-    // }, [activeMenuCategories]);
 
   return (
         <div className={styles['MenuOrderTab']}>
@@ -58,15 +27,13 @@ const MenuOrderTab = () => {
 
           <div className={styles['container-section']}>
 
-            {MenuOrderTabData.events.map((item) =>{
+            {menuOnCategory.orderMenu.map((item) =>{
             return(
-              <div key={item.title}>
-                <MenuOrderTabCard title={item.title} price ={item.price} quantity ={item.quantity}/>
+              <div key={shortid.generate()}>
+                <MenuOrderTabCard title={item.menuName} price ={item.menuPrice} quantity ={item.orderMenuQuantity} quantityOnChange={handleQuantityOnChange}/>
               </div>
             )
           })}
-
-          {}
             
           </div>
 
