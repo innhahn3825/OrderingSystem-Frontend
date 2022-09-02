@@ -29,3 +29,6 @@ export { default as PaymentPageBody } from "./PaymentPage/PaymentPageBody/Paymen
 export { default as PaymentOrderTab } from "./PaymentPage/PaymentOrderTab/PaymentOrderTab.jsx"
 export { default as PaymentOrderTabCard } from "./PaymentPage/PaymentOrderTab/PaymentOrderTabCard.jsx/PaymentOrderTabCard.jsx"
 export { default as PaymentPageCard } from "./PaymentPage/PaymentPageBody/PaymentPageCard/PaymentPageCard.jsx"
+
+// TitleBar
+export { default as TitleBar} from "./TitleBar/TitleBar.jsx"

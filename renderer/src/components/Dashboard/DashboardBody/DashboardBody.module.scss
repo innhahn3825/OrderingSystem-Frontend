@@ -8,29 +8,37 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 3rem;
-
-    .Clock--Container{
-        display: flex;
-        background-color: white;
-        border-radius: 50%;
-        color: black;
-        size: 10px;
-        gap: 2rem;
-        align-items: center;
-    }
     
     .Container{
+        padding-left: 80px;
         display: flex;
         margin-bottom: 30px;
+        width: 1200px;
+
+        .Clock--Container{
+            display: flex;
+            background-color: white;
+            border-radius: 50%;
+            color: black;
+            size: 10px;
+            gap: 2rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        .Txt-Container{
+            margin-left: 70px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+            align-items: center;
+            justify-content: center;
+            h1{
+                font-size: 50px;
+            }
+        }
+    
     }
 
-    .Txt-Container{
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 30px;
-        align-items: center;
-        justify-content: center;
-        padding-left: 20px;
-    }  
+
 }
