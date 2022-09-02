@@ -21,12 +21,13 @@ const DashboardBody = () => {
 
     return (
         <div className={styles['DashboardBody']}>
-          <div className={styles['Container']}>
-            <Clock value={value} renderNumbers="true" size="350" className={styles['Clock--Container']} />
-            {dateString}
-            <h1> Escobar Ordering System </h1>
+          <div className={styles['Container']}> 
+            <Clock value={value} renderNumbers="true" size="350" className={styles['Clock--Container']}/>
+              <div className={styles['Txt-Container']}>
+                <h1> Escobar Ordering System </h1>
+                {dateString}
+              </div>
           </div>
-
         </div>
   )
 }

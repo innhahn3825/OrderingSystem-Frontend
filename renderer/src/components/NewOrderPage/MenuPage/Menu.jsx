@@ -1,22 +1,9 @@
 import React, {useState} from 'react'
 import styles from './Menu.module.scss'
-// import OrderMenu from '../../models/OrderMenu.tsx';
 import { MenuCard } from "../../ComponentIndex";
 import shortid from 'shortid';
 
 const Menu = ({menus, cartOnChange}) => {
-  // const[orderCart, setOrderCart] = useState(new OrderMenu(1, "", 1, 1, "", [], 1, false));
-  
-  // const getAllOrderMenuItems = () => {
-
-  //   rest.getMenuBasedOnCategory(
-  //     `${INITIAL_URL}/orders/menu-on-category`,
-  //     menuOnCategory.toJson(),
-  //     handleMenusBasedOnCategoryLoad
-  //   );
-
-  // };
-
 
   return (
         <div className={styles['Menu']}>

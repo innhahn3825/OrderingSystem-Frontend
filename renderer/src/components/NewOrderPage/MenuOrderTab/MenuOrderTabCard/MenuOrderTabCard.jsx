@@ -34,7 +34,7 @@ const MenuOrderTabCard = ({title, price, quantity, quantityOnChange}) => {
             </div>
 
             <div className={styles['Price-Section']}>
-              <p> {price}</p>
+              <p> $ {price}</p>
                 <div className={styles['Remove-Section']}>
                   <button>
                     <Image

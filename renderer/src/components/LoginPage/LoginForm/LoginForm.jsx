@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./LoginForm.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import Link from "next/link";
 
 const LoginForm = ({ account, usernameOnChange, passwordOnChange, loginOnClick }) => {
   // const router = useRouter();

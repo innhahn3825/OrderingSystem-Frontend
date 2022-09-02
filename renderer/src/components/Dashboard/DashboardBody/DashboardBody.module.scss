@@ -19,9 +19,18 @@
         gap: 2rem;
         align-items: center;
     }
-}
+    
+    .Container{
+        display: flex;
+        margin-bottom: 30px;
+    }
 
-.Container{
-    margin-bottom: 30px;
-    align-items: center;
-}  
+    .Txt-Container{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        align-items: center;
+        justify-content: center;
+        padding-left: 20px;
+    }  
+}

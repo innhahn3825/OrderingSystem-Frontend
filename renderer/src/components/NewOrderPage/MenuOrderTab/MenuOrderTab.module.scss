@@ -1,17 +1,13 @@
 @import '../../../styles/variables.scss';
 
 .MenuOrderTab {
-    // width: 30rem;
     display: flex;
     flex-direction: column;
     padding: 5px 10px 20px;
     gap: 20px;
     overflow: auto;
-    width: 400px;
+    width: 450px;
     height: 100vh;
-    
-    /* white */
-    
     background: #FFFFFF;
     box-shadow: -4px 0px 20px rgba(0, 0, 0, 0.02);
 }
@@ -21,17 +17,34 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0px;
+    padding-top: 20px;
     gap: 10px;
+    
+    h3{
+        padding-left: 10px;
+        font-family: 'SF Pro Text';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+    }
     button{
+        display: flex;
         background-color: white;
         border: 1px solid white;
 
     }
     button:active{
         display: flex;
-        transform: scale(1);    
+        transform: scale(1.2);    
+    }
+}
 
+.container{
+    padding-top: 20px;
+    padding-left: 5px;
+    .container-section{
+        padding-bottom:15px;
     }
 }
 
@@ -43,8 +56,8 @@
     padding: 12px 10px 12px 20px;
     gap: 10px;
 
-    width: 250px;
-    height: 48px;
+    width: 320px;
+    height: 50px;
 
     background: #003049;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
