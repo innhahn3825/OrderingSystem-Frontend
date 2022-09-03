@@ -8,7 +8,11 @@
     background-color:white;
     width: 450px;
     height: 100px;
+    .PaymentPageCard:active{
+        background-color: #003049;
+    }
 }
+
 
 .First-Section{
     display: flex;

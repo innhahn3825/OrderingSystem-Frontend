@@ -18,7 +18,7 @@ const NewOrderPage = () => {
 
   const [currentMenuCategory, setCurrentMenuCategory] = useState();
 
-  const[orderCart, setOrderCart] = useState(new OrderMenu(1, "", 1, 1, "", [], 1, false));
+  // const[orderCart, setOrderCart] = useState(new OrderMenu(1, "", 1, 1, "", [], 1, false));
 
   const[menusBasedOnCategory, setMenusBasedOnCategory] = useState([]);
   const[menuOnCategory, setMenuOnCategory] = useState(new MenuOnCategory("", []));
@@ -26,6 +26,11 @@ const NewOrderPage = () => {
   const handleCartChange = (newMenu) => {
     newMenu.orderMenuQuantity = 1;
     const isNewMenuExisting = false;
+
+    if (newMenu.numberOfServingsLeft === 0){
+      return;
+    }
+
     const newMenuOnCategory = menuOnCategory.orderMenu.map((currentMenu)=> {
       if (currentMenu.menuName === newMenu.menuName){
         currentMenu.orderMenuQuantity += 1;
@@ -48,12 +53,46 @@ const NewOrderPage = () => {
     );
   };
 
-  const handleQuantityOnChange = (name, quantityToAdd) => {
+  const handleDeleteItemButtonOnClick = (data) => {
+      const newMenuOnCategory = [];
+      menuOnCategory.orderMenu.forEach((currentMenu)=> {
+        if(currentMenu.menuName !== data){
+          newMenuOnCategory.push(currentMenu);
+        }
+      });
+      setMenuOnCategory(new MenuOnCategory(
+        menuOnCategory.menuCategoryName,
+        newMenuOnCategory
+      ));
+  }
 
+  const deleteAllItemOnClick = () => {
+    const newMenuOnCategory = [];
+    setMenuOnCategory(new MenuOnCategory(
+      menuOnCategory.menuCategoryName,
+      newMenuOnCategory
+    ));
+  }
+  const handleQuantityOnChange = (name, quantity, quantityToAdd) => {
+    if (quantity + quantityToAdd <= 0){
+      const newMenuOnCategory = [];
+      menuOnCategory.orderMenu.forEach((currentMenu)=> {
+        if(currentMenu.menuName !== name){
+          newMenuOnCategory.push(currentMenu);
+        }
+      });
+      setMenuOnCategory(new MenuOnCategory(
+        menuOnCategory.menuCategoryName,
+        newMenuOnCategory
+      ));
+
+      return;
+    }
     const newMenuOnCategory = menuOnCategory.orderMenu.map((currentMenu)=> {
       if (currentMenu.menuName === name){
         currentMenu.orderMenuQuantity += quantityToAdd;
       }
+
       return currentMenu;
     });
     setMenuOnCategory(new MenuOnCategory(
@@ -125,6 +164,8 @@ const NewOrderPage = () => {
         <MenuOrderTab
           menuOnCategory={menuOnCategory}
           handleQuantityOnChange={handleQuantityOnChange}
+          handleDeleteItemButtonOnClick={handleDeleteItemButtonOnClick}
+          deleteAllItemOnClick={deleteAllItemOnClick}
         />
       </div>
 

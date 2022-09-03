@@ -9,7 +9,7 @@ const MenuCard = ({name, price, servings}) => {
   // const[orderCart, setOrderCart] = useState(new OrderMenu(1, "", 1, 1, "", [], 1, false));
 
   return (
-        <div className={styles['MenuCard']}>
+        <div className={styles['MenuCard']} >
                 <div className={[styles["wrapper"], servings===0 && styles["wrapper--selected"]].join(" ")}>
                     <p> $ {price}  </p>
                     <h1> {name}</h1>

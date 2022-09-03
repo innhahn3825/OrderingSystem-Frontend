@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './MenuOrderTabCard.module.scss'
 import Image from "next/image";
 
-const MenuOrderTabCard = ({title, price, quantity, quantityOnChange}) => {
+const MenuOrderTabCard = ({title, price, quantity, quantityOnChange, handleDeleteItemButtonOnClick}) => {
   return (
         <div className={styles['MenuOrderTabCard']}>
           {/* <MenuCard/> */}
@@ -11,7 +11,7 @@ const MenuOrderTabCard = ({title, price, quantity, quantityOnChange}) => {
             <div className={styles['Title-Section']}>
               <h2> {title}</h2>
                 <div className={styles['Counter-Section']}>
-                <button onClick={()=>quantityOnChange(title, -1)}>
+                <button onClick={()=>quantityOnChange(title,  quantity, -1)}>
                 <Image
                   src="/images/counter.svg"
                   alt="delete icon"
@@ -21,7 +21,7 @@ const MenuOrderTabCard = ({title, price, quantity, quantityOnChange}) => {
                 />  
                 </button>
                 <h2> {quantity} </h2>
-                <button onClick={()=>quantityOnChange(title, 1)}>
+                <button onClick={()=>quantityOnChange(title, quantity, 1)}>
                 <Image
                   src="/images/counter-add.svg"
                   alt="delete icon"
@@ -34,9 +34,9 @@ const MenuOrderTabCard = ({title, price, quantity, quantityOnChange}) => {
             </div>
 
             <div className={styles['Price-Section']}>
-              <p> $ {price}</p>
+              <p> $ {price * quantity}</p>
                 <div className={styles['Remove-Section']}>
-                  <button>
+                  <button onClick={()=>handleDeleteItemButtonOnClick(title)}>
                     <Image
                       src="/images/remove.svg"
                       alt="delete icon"

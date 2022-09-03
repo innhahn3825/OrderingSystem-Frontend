@@ -7,14 +7,14 @@ import {MenuOrderTabData} from "../../../data/DataIndex"
 import shortid from 'shortid';
 
 
-const MenuOrderTab = ({menuOnCategory, handleQuantityOnChange}) => {
+const MenuOrderTab = ({menuOnCategory, handleQuantityOnChange, handleDeleteItemButtonOnClick, deleteAllItemOnClick}) => {
 
 
   return (
         <div className={styles['MenuOrderTab']}>
           <div className={styles['txt-section']}>
             <h3> New Order </h3>
-            <button>
+            <button onClick={deleteAllItemOnClick}>
               <Image
                   src="/images/delete.svg"
                   alt="delete icon"
@@ -27,10 +27,16 @@ const MenuOrderTab = ({menuOnCategory, handleQuantityOnChange}) => {
 
           <div className={styles['container']}>
 
-            {menuOnCategory.orderMenu.map((item) =>{
+          {menuOnCategory.orderMenu.map((item) =>{
             return(
               <div className={styles['container-section']} key={shortid.generate()}>
-                <MenuOrderTabCard title={item.menuName} price ={item.menuPrice} quantity ={item.orderMenuQuantity} quantityOnChange={handleQuantityOnChange}/>
+                <MenuOrderTabCard 
+                  title={item.menuName} 
+                  price ={item.menuPrice} 
+                  quantity ={item.orderMenuQuantity}
+                  quantityOnChange={handleQuantityOnChange}
+                  handleDeleteItemButtonOnClick={handleDeleteItemButtonOnClick}
+                  />
               </div>
             )
           })}
@@ -39,7 +45,7 @@ const MenuOrderTab = ({menuOnCategory, handleQuantityOnChange}) => {
 
           <div className={styles['total-section']}>
             <h1> $16.25 </h1>
-              <Link href = "/payment">
+              {/* <Link href = "/payment"> */}
                 <div className={styles['pay-section']}>
                   <h2> Pay </h2>
                   <Image
@@ -50,7 +56,7 @@ const MenuOrderTab = ({menuOnCategory, handleQuantityOnChange}) => {
                     objectFit="cover"
                   />          
                 </div>
-              </Link>
+              {/* </Link> */}
           </div>
 
         </div>
