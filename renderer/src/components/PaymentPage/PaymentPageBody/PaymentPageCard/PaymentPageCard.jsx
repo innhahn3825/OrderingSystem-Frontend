@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './PaymentPageCard.module.scss';
 
-const PaymentPageCard = ({ordernum, quantity, price}) => {
+const PaymentPageCard = ({ordernum, quantity, price, isSelected}) => {
   return (
-    <div className={styles['PaymentPageCard']}>
+    <div className={[styles['PaymentPageCard'], isSelected && styles['PaymentPageCard--selected']].join(" ")}>
             <div className={styles['First-Section']}>
                 <h3> Order # {ordernum} </h3>
             </div>

@@ -8,13 +8,6 @@ import Link from 'next/link';
 
 const MenuSideBar = ({items, categoryOnChange, currentMenuCategory}) => {
 
-  // const [currentMenuCategory, setCurrentMenuCategory] = useState(items[0]);
-
-  // const categoryOnChange = (category) => {
-
-  //   setCurrentMenuCategory(category);
-  // }
-
   return (
     <div className={styles['MenuSideBar']}>
       <Link href = "/dashboard"> 
