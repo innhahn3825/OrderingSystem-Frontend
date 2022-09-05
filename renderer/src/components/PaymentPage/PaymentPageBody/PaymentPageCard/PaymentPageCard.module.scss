@@ -8,8 +8,13 @@
     background-color:white;
     width: 450px;
     height: 100px;
-    .PaymentPageCard:active{
-        background-color: #003049;
+    border-radius: 10px;
+    // .PaymentPageCard:active{
+    //     background-color: #003049;
+    // }
+
+    &--selected{
+        background-color: #cdcdcd;
     }
 }
 

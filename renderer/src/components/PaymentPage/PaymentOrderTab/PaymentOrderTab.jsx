@@ -1,9 +1,10 @@
 import React from 'react'
 import styles from './PaymentOrderTab.module.scss';
 import { PaymentOrderTabData } from "../../../data/DataIndex"
-import { PaymentOrderTabCard } from "../../ComponentIndex"
+import { PaymentOrderTabCard } from "../../ComponentIndex";
+import shortid from 'shortid';
 
-const PaymentOrderTab = () => {
+const PaymentOrderTab = ({orderTabItems}) => {
   return (
     <div className={styles['PaymentOrderTab']}>
       <div className={styles['txt-section']}>
@@ -16,10 +17,10 @@ const PaymentOrderTab = () => {
       </div>
 
       <div className={styles['component-section']}>
-      {PaymentOrderTabData.events.map((item) =>{
+      {orderTabItems.map((item) =>{
         return(
-              <div key={item.title}>
-                <PaymentOrderTabCard title={item.title} quantity ={item.quantity} />
+              <div key={shortid.generate()}>
+                <PaymentOrderTabCard title={item.foodOrder.menu.menuName} quantity ={item.foodOrder.menuQuantity} />
               </div>
             )
       })}
