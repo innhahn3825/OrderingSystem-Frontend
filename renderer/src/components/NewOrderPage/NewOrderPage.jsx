@@ -15,7 +15,7 @@ const NewOrderPage = () => {
   const rest = new Rest();
 
   const [activeMenuCategories, setActiveMenuCategories] = useState([]);
-
+  // const [total, setTotal] = useState(0);
   const [currentMenuCategory, setCurrentMenuCategory] = useState();
 
   // const[orderCart, setOrderCart] = useState(new OrderMenu(1, "", 1, 1, "", [], 1, false));
@@ -133,6 +133,7 @@ const NewOrderPage = () => {
     );
   }
 
+  
   useEffect(() => {
     getAllActiveMenuCategories();
   }, []);
@@ -148,6 +149,9 @@ const NewOrderPage = () => {
         activeMenuCategories[0],
         menuOnCategory.orderMenu
       )
+      // new Total(
+      //   menuOnCategory.orderMenu.orderMenuQuantity * menuOnCategory.orderMenu.orderMenuPrice
+      // )
     );
   }, [activeMenuCategories]);
 
