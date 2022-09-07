@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styles from './MenuOrderTab.module.scss'
 import Image from "next/image";
 import Link from "next/link";
@@ -8,6 +8,15 @@ import shortid from 'shortid';
 
 
 const MenuOrderTab = ({menuOnCategory, handleQuantityOnChange, handleDeleteItemButtonOnClick, deleteAllItemOnClick}) => {
+
+
+const[total, setTotal] = useState(1);
+
+
+useEffect(() => {
+
+  setTotal(menuOnCategory.orderMenu.reduce((sum, currentMenu) => sum + currentMenu.menuPrice * currentMenu.orderMenuQuantity, 0));
+}, [menuOnCategory]);
 
 
   return (
@@ -44,7 +53,9 @@ const MenuOrderTab = ({menuOnCategory, handleQuantityOnChange, handleDeleteItemB
           </div>
 
           <div className={styles['total-section']}>
-            <h1> $16.25 </h1>
+            <h1>
+              $ {total}
+            </h1> 
               {/* <Link href = "/payment"> */}
                 <div className={styles['pay-section']}>
                   <h2> Pay </h2>
