@@ -53,6 +53,24 @@ class Rest {
       });
   }
 
+  delete(
+    url: string,
+    handleSuccessAction: Function,
+    successMessage: string
+  ) {
+    axios
+      .delete(url)
+      .then(function (response) {
+        if (response.status === 200) {
+          handleSuccessAction();
+          toast.success(successMessage);
+        }
+      })
+      .catch(function (error) {
+        toast.error(error?.response?.data?.message);
+      });
+  }
+
   getMenuBasedOnCategory(
     url: string,
     body: Object,

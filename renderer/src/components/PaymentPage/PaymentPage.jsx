@@ -3,6 +3,7 @@ import styles from './PaymentPage.module.scss';
 import { Sidebar, PaymentPageBody, PaymentOrderTab } from "../ComponentIndex";
 import Pagination from "../../models/Pagination.tsx";
 import Rest from "../../rest/Rest.tsx";
+import Toast from '../Toast/Toast';
 
 const INITIAL_URL = "http://localhost:8080/api/v1";
 
@@ -60,12 +61,26 @@ const PaymentPage = () => {
     );
   }
 
+  const handleVoidOrderSuccess = () => {
+    getAllOrders();
+  }
+
+  const handleVoidButtonOnClick = (orderId) => {
+    rest.delete(
+      `${INITIAL_URL}/orders/void/${orderId}`,
+      handleVoidOrderSuccess,
+      "Successfully voided the order"
+    )
+
+  }
+
   useEffect(() => {
     getAllOrders();
   }, [pagination]);
 
   return (
     <div className={styles["PaymentPage"]}>
+      <Toast />
       <Sidebar page="paymentpage" />
       <div className={styles["Component"]}>
         <PaymentPageBody
@@ -77,6 +92,7 @@ const PaymentPage = () => {
           pageNoOnChange={handlePageNoOnChange}
           pageSizeOnChange={handlePageSizeOnChange}
           orderCardOnClick={handleOrderCardOnClick}
+          voidButtonOnClick={handleVoidButtonOnClick}
         />
         <PaymentOrderTab orderTabItems={orderTabItems} />
       </div>

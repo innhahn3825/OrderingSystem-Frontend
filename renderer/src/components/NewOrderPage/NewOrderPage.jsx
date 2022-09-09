@@ -168,8 +168,8 @@ const NewOrderPage = () => {
     const handleOrderSuccess = () => {
       setMenuOnCategory(
         new MenuOnCategory(
-          newCategory,
-          menuOnCategory.orderMenu
+          menuOnCategory.menuCategoryName,
+          []
         )
       );
     }
