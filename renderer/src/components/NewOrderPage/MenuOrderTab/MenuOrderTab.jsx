@@ -60,10 +60,9 @@ const MenuOrderTab = ({
         })}
       </div>
 
-      <div className={styles["total-section"]}>
+      <div className={styles["total-section"]} onClick={payButtonOnClick}>
         <h1>$ {total}</h1>
-        {/* <Link href = "/payment"> */}
-        <div className={styles["pay-section"]} onClick={payButtonOnClick}>
+        <div className={styles["pay-section"]}>
           <h2> Pay </h2>
           <Image
             src="/images/chevron.svg"
@@ -73,7 +72,6 @@ const MenuOrderTab = ({
             objectFit="cover"
           />
         </div>
-        {/* </Link> */}
       </div>
     </div>
   );

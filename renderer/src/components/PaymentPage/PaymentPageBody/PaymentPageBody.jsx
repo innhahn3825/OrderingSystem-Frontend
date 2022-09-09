@@ -6,6 +6,7 @@ import { PaymentPageCard } from '../../ComponentIndex'
 import { TablePagination } from "@mui/material";
 import shortid from 'shortid';
 
+
 const PaymentPageBody = ({
   totalPages,
   pageNo,
@@ -17,6 +18,8 @@ const PaymentPageBody = ({
   orderCardSelected,
   voidButtonOnClick
 }) => {
+
+
 
   return (
     <div className={styles["PaymentPageBody"]}>
