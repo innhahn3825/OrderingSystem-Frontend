@@ -5,6 +5,14 @@ import { PaymentOrderTabCard } from "../../ComponentIndex";
 import shortid from 'shortid';
 
 const PaymentOrderTab = ({orderTabItems}) => {
+  console.log(orderTabItems)
+
+  const total = orderTabItems.reduce(
+    (sum, currentMenu) =>
+      sum + currentMenu.foodOrder.menu.menuPrice * currentMenu.foodOrder.menuQuantity,
+    0
+  );
+
   return (
     <div className={styles['PaymentOrderTab']}>
       <div className={styles['txt-section']}>
@@ -28,7 +36,7 @@ const PaymentOrderTab = ({orderTabItems}) => {
 
       <div className={styles['Total-Section']}>
         <div className={styles['Txt-Section']}>
-          <h1> Total $15.30</h1>
+          <h1> {`Total $${total}`}</h1>
         </div>
       </div>
 

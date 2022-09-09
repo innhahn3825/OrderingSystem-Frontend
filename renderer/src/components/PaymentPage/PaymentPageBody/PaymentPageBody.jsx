@@ -14,7 +14,8 @@ const PaymentPageBody = ({
   pageSizeOnChange,
   items,
   orderCardOnClick,
-  orderCardSelected
+  orderCardSelected,
+  voidButtonOnClick
 }) => {
 
   return (
@@ -36,6 +37,7 @@ const PaymentPageBody = ({
               quantity={item.customerFoodOrders.length}
               price={item.payment}
               isSelected={orderCardSelected === item.orderId}
+              voidButtonOnClick={voidButtonOnClick}
             />
           </div>
         );
