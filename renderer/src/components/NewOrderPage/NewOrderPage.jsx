@@ -7,6 +7,7 @@ import { MenuSideBar, Menu, MenuOrderTab }  from "../ComponentIndex";
 import Rest from '../../rest/Rest.tsx';
 import MenuOnCategory from '../../models/MenuOnCategory.tsx';
 import OrderMenu from '../../models/OrderMenu.tsx';
+import Order from '../../models/Order.tsx';
 
 const INITIAL_URL = "http://localhost:8080/api/v1";
 
@@ -133,13 +134,20 @@ const NewOrderPage = () => {
     );
   }
 
-  
+  const handlePayButtonOnClick = () => {
+    const order = new Order();
+
+    rest.add(
+      `${INITIAL_URL}/orders/add`,
+
+    )
+  }
+
   useEffect(() => {
     getAllActiveMenuCategories();
   }, []);
 
   useEffect(() => {
-    console.log(menuOnCategory);
     getAllMenusBasedOnCategory();
   }, [menuOnCategory]);
 
@@ -149,9 +157,6 @@ const NewOrderPage = () => {
         activeMenuCategories[0],
         menuOnCategory.orderMenu
       )
-      // new Total(
-      //   menuOnCategory.orderMenu.orderMenuQuantity * menuOnCategory.orderMenu.orderMenuPrice
-      // )
     );
   }, [activeMenuCategories]);
 
