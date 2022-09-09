@@ -8,6 +8,11 @@ import Rest from '../../rest/Rest.tsx';
 import MenuOnCategory from '../../models/MenuOnCategory.tsx';
 import OrderMenu from '../../models/OrderMenu.tsx';
 import Order from '../../models/Order.tsx';
+import CustomerFoodOrder from '../../models/CustomerFoodOrder.tsx';
+import FoodOrder from '../../models/FoodOrder.tsx';
+import MenuModel from '../../models/Menu.tsx';
+import { useUser } from '../contexts/UserContext';
+import Toast from '../Toast/Toast';
 
 const INITIAL_URL = "http://localhost:8080/api/v1";
 
@@ -15,14 +20,18 @@ const NewOrderPage = () => {
 
   const rest = new Rest();
 
-  const [activeMenuCategories, setActiveMenuCategories] = useState([]);
-  // const [total, setTotal] = useState(0);
-  const [currentMenuCategory, setCurrentMenuCategory] = useState();
+  const { employeeName } = useUser();
 
-  // const[orderCart, setOrderCart] = useState(new OrderMenu(1, "", 1, 1, "", [], 1, false));
+  const [activeMenuCategories, setActiveMenuCategories] = useState([]);
+
+  const [currentMenuCategory, setCurrentMenuCategory] = useState();
 
   const[menusBasedOnCategory, setMenusBasedOnCategory] = useState([]);
   const[menuOnCategory, setMenuOnCategory] = useState(new MenuOnCategory("", []));
+
+  const [payment, setPayment] = useState(0);
+
+
 
   const handleCartChange = (newMenu) => {
     newMenu.orderMenuQuantity = 1;
@@ -135,11 +144,41 @@ const NewOrderPage = () => {
   }
 
   const handlePayButtonOnClick = () => {
-    const order = new Order();
+    const customerFoodOrders = menuOnCategory.orderMenu.map((orderMenu) => {
+      console.log("orderMenu: ", orderMenu);
+
+      return (new CustomerFoodOrder(1, new FoodOrder(1, new MenuModel(
+        orderMenu.menuId, 
+        orderMenu.menuName, 
+        orderMenu.menuPrice, 
+        orderMenu.menuCategoryName,
+        orderMenu.ingredients,
+        orderMenu.numberOfServingsLeft,
+        orderMenu.isActive), orderMenu.orderMenuQuantity)))
+    })
+
+    const total = menuOnCategory.orderMenu.reduce(
+      (sum, currentMenu) =>
+        sum + currentMenu.menuPrice * currentMenu.orderMenuQuantity,
+      0
+    );
+
+    const order = new Order(1, employeeName, new Date(), customerFoodOrders, payment, total);
+
+    const handleOrderSuccess = () => {
+      setMenuOnCategory(
+        new MenuOnCategory(
+          newCategory,
+          menuOnCategory.orderMenu
+        )
+      );
+    }
 
     rest.add(
       `${INITIAL_URL}/orders/add`,
-
+      order,
+      handleOrderSuccess,
+      "Ordered Successfully"
     )
   }
 
@@ -162,6 +201,7 @@ const NewOrderPage = () => {
 
   return (
     <div className={styles["NewOrderPage"]}>
+      <Toast />
       <MenuSideBar
         items={activeMenuCategories}
         categoryOnChange={handleCategoryOnChange}
@@ -175,6 +215,7 @@ const NewOrderPage = () => {
           handleQuantityOnChange={handleQuantityOnChange}
           handleDeleteItemButtonOnClick={handleDeleteItemButtonOnClick}
           deleteAllItemOnClick={deleteAllItemOnClick}
+          payButtonOnClick={handlePayButtonOnClick}
         />
       </div>
 
