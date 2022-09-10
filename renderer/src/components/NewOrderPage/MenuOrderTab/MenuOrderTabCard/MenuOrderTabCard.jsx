@@ -3,6 +3,7 @@ import styles from './MenuOrderTabCard.module.scss'
 import Image from "next/image";
 
 const MenuOrderTabCard = ({title, price, quantity, quantityOnChange, handleDeleteItemButtonOnClick}) => {
+
   return (
         <div className={styles['MenuOrderTabCard']}>
           {/* <MenuCard/> */}
@@ -47,6 +48,7 @@ const MenuOrderTabCard = ({title, price, quantity, quantityOnChange, handleDelet
                   </button>           
                 </div>
             </div>
+
 
           </div>
         </div>

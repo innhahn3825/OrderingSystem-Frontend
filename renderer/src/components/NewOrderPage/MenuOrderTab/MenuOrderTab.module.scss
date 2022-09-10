@@ -50,47 +50,229 @@
 
 .total-section{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     padding: 12px 10px 12px 20px;
-    gap: 10px;
-
     width: 320px;
     height: 50px;
-
     background: #003049;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
     border-radius: 6px;
-    h1{
-        font-family: 'SF Pro Text';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 19px;
-        color: white;
-    }
-    .pay-section {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 0px;
-        gap: 5px;
 
-        h2{
+    .total-section--wrapper{
+        gap: 200px;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        display: flex;
+
+        h1{
             font-family: 'SF Pro Text';
             font-style: normal;
-            font-weight: 400;
+            font-weight: 700;
             font-size: 16px;
             line-height: 19px;
             color: white;
         }
+        .pay-section {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 0px;
+            gap: 5px;
+
+            h2{
+                font-family: 'SF Pro Text';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 19px;
+                color: white;
+            }
+        }
     }
+    
 
 }
 
 .total-section:active{
-    width: 400px;
-    height: 60px;
+    transform: translateY(4px);
+}
+
+.child-style{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 566px;
+    height: 410px;
+    display: flex;
+    background-color: #FAFAFA;
+    border: 3px solid;
+    border-radius: 6px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+
+    .Close_Button{
+        position:absolute;
+        top:0;
+        right:0;
+        background-color: red;
+        color: white;
+        border: 3px solid #000000;
+    }
+    
+    .Close_Button:active{
+        box-shadow: 0 5px #666;
+        transform: translateY(2px);
+        background-color: #f80707bc;
+
+    }
+
+    .Confirm_Button{
+        width: 128px;
+        height: 45.84px;
+        box-sizing: border-box;
+        background: #36CD1D;
+        border: 3px solid #000000;
+        color: white;
+
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .Confirm_Button:active{
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+
+    .Wrapper{ 
+
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 130px;
+
+        .Image-Section {
+            margin-bottom: 15px;
+        }
+
+        .Text-Section {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            h1 {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 20px;
+                text-align: center;
+                
+            }
+            .Change-Section {
+                margin-top: 20px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                width: 244px;
+                height: 52px;
+                background: #d7d3d3;
+                border: 2px solid #000000;
+            }
+    
+        }
+
+    }
+}
+
+
+.style {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 566px;
+    height: 410px;
+    display: flex;
+    background-color: #FAFAFA;
+    border: 3px solid;
+    border-radius: 6px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+
+    .Close_Button{
+        position:absolute;
+        top:0;
+        right:0;
+        background-color: red;
+        color: white;
+        border: 3px solid #000000;
+    }
+    .Close_Button:active{
+        box-shadow: 0 5px #666;
+        transform: translate(2px);
+        background-color: #f80707bc;
+    }
+
+    .Wrapper{ 
+        .Image-Section {
+            margin-bottom: 25px;
+        }
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 120px;
+
+    }
+
+
+    .Text-Section {
+        h1 {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .Button-Section {
+            margin-top: 20px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+
+            .Input-Forms {
+                width: 100%;
+                border-radius: 4px;
+                border-color: #CED4DA;
+                padding: 5px;
+                ::placeholder {
+                    color: #6C757D;
+                    opacity: 1;
+                  }
+            }
+            
+            .Confirm_Button{
+                width: 128px;
+                height: 45.84px;
+                box-sizing: border-box;
+                background: #36CD1D;
+                border: 3px solid #000000;
+                color: white;
+                justify-content: center;
+
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 30px;
+            }
+        }
+    }
 }
