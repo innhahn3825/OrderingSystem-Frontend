@@ -1,7 +1,5 @@
 import React from 'react'
 import styles from './SidebarCategory.module.scss'
-import Image from "next/image";
-
 
 const SidebarCategory = ({Title, isActive}) => {
   return (
