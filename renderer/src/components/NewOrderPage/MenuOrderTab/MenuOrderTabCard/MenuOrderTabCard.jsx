@@ -15,7 +15,7 @@ const MenuOrderTabCard = ({title, price, quantity, quantityOnChange, handleDelet
                 <button onClick={()=>quantityOnChange(title,  quantity, -1)}>
                 <Image
                   src="/images/counter.svg"
-                  alt="delete icon"
+                  alt="minus icon"
                   width="25"
                   height="25"
                   objectFit="cover"
@@ -25,7 +25,7 @@ const MenuOrderTabCard = ({title, price, quantity, quantityOnChange, handleDelet
                 <button onClick={()=>quantityOnChange(title, quantity, 1)}>
                 <Image
                   src="/images/counter-add.svg"
-                  alt="delete icon"
+                  alt="add icon"
                   width="25"
                   height="25"
                   objectFit="cover"
@@ -40,7 +40,7 @@ const MenuOrderTabCard = ({title, price, quantity, quantityOnChange, handleDelet
                   <button onClick={()=>handleDeleteItemButtonOnClick(title)}>
                     <Image
                       src="/images/remove.svg"
-                      alt="delete icon"
+                      alt="remove icon"
                       width="15"
                       height="15"
                       objectFit="cover"

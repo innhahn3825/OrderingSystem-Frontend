@@ -9,15 +9,12 @@ const Menu = ({menus, cartOnChange}) => {
         <div className={styles['Menu']}>
           {menus && menus.map(menu => {
             return (
-              <div key={shortid.generate()} onClick={()=>cartOnChange(menu)}>
-                {/* {ordercart} = {1, {menu.menuName}, 1,  {menu.menuPrice}, [menu.numberOfServingsLeft], 1, false} */}
+              <div className={styles['MenuCardContainer']} key={shortid.generate()} onClick={()=>cartOnChange(menu)}>
                 <MenuCard name = {menu.menuName} price ={menu.menuPrice} servings ={menu.numberOfServingsLeft} />
               </div>
             )
           })}
-
         </div>
-
   )
 }
 

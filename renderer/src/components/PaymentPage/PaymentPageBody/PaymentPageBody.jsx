@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import styles from './PaymentPageBody.module.scss';
 import { PaymentCardData } from '../../../data/DataIndex';
 import { PaymentPageCard } from '../../ComponentIndex'

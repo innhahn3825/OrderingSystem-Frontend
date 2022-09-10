@@ -143,7 +143,7 @@ const NewOrderPage = () => {
     );
   }
 
-  const handlePayButtonOnClick = () => {
+  const handlePayButtonOnClick = (customerPayment) => {
     const customerFoodOrders = menuOnCategory.orderMenu.map((orderMenu) => {
       console.log("orderMenu: ", orderMenu);
 
@@ -163,7 +163,7 @@ const NewOrderPage = () => {
       0
     );
 
-    const order = new Order(1, employeeName, new Date(), customerFoodOrders, payment, total);
+    const order = new Order(1, employeeName, new Date(), customerFoodOrders, customerPayment, total);
 
     const handleOrderSuccess = () => {
       setMenuOnCategory(

@@ -7,6 +7,8 @@ import shortid from 'shortid';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
+import Toast from '../../Toast/Toast'
+import { toast } from 'react-toastify';
 
 const MenuOrderTab = ({
   menuOnCategory,
@@ -19,12 +21,16 @@ const MenuOrderTab = ({
   const [total, setTotal] = useState(1);
 
   const [open, setOpen] = React.useState(false);
+  const [customerPayment, setCustomerPayment] = useState(0);
   const handleClose = () => {
     setOpen(false);
   };
   const handleOpen = () => {
     setOpen(true);
   };
+  const customerPaymentOnChange = (e) => {
+    setCustomerPayment(e.target.value);
+  }
 
 
   useEffect(() => {
@@ -46,7 +52,7 @@ const MenuOrderTab = ({
         <button onClick={deleteAllItemOnClick}>
           <Image
             src="/images/delete.svg"
-            alt="delete icon"
+            alt="clear all icon"
             width="20"
             height="20"
             objectFit="cover"
@@ -92,8 +98,8 @@ const MenuOrderTab = ({
                   <div className={styles['Text-Section']}>
                     <h1> Please input the Customer Payment </h1>
                       <div className={styles['Button-Section']}>
-                      <input type="text" id="first" className={styles["Input-Forms"]} placeholder="Input the money of the customer" />
-                        <ChildModal className={styles['Confirm_Button']} payButtonOnClick = {payButtonOnClick} />
+                      <input value = {customerPayment} onChange = {customerPaymentOnChange} type="text" id="first" className={styles["Input-Forms"]} placeholder="Input the money of the customer" />
+                        <ChildModal className={styles['Confirm_Button']} payButtonOnClick = {payButtonOnClick} total = {total} customerPayment = {customerPayment} handleMainModalClose = {handleClose} />
                       </div>
                   </div>
                 </div>
@@ -103,7 +109,7 @@ const MenuOrderTab = ({
           <h2 > Pay </h2>
           <Image
             src="/images/chevron.svg"
-            alt="delete icon"
+            alt="Chevron icon"
             width="20"
             height="20"
             objectFit="cover"
@@ -117,20 +123,27 @@ const MenuOrderTab = ({
   );
 };
 
-function ChildModal({payButtonOnClick}) {
+function ChildModal({payButtonOnClick, total, customerPayment, handleMainModalClose}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
-    setOpen(true);
-    {payButtonOnClick}
+    if (total > customerPayment){ 
+       toast.error(" The Customer Payment must be higher than the total");
+    }
+    else{ 
+      setOpen(true);
+    }
   };
   const handleClose = () => {
     setOpen(false);
-    
+    payButtonOnClick(customerPayment)
+    handleMainModalClose()
+
   };
 
   return (
     <React.Fragment>
       <Button className={styles['Confirm_Button']} onClick={handleOpen}>Confirm</Button>
+
       <Modal hideBackdrop open={open} onClose={handleClose}>
         <Box className={styles['child-style']}>
           <Button onClick={handleClose} className={styles['Close_Button']}> X </Button>
@@ -148,7 +161,7 @@ function ChildModal({payButtonOnClick}) {
                 <div className={styles['Text-Section']}>
                   <h1> The Change for the transaction is:  </h1>
                     <div className={styles['Change-Section']}>
-                      <h1> Change </h1> 
+                      <h1> {customerPayment - total} </h1> 
                     </div>
                 </div>
             </div>

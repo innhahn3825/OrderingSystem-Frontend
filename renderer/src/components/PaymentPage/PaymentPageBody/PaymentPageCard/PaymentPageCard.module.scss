@@ -82,6 +82,11 @@
                 font-size: 20px;
                 line-height: 30px;
             }
+            .Confirm_Button:active{
+                box-shadow: 0 5px #666;
+                transform: translateY(2px);
+                background-color: #37cd1da6;
+            }
             .Cancel_Button{
                 width: 120px;
                 height: 50px;
@@ -94,6 +99,11 @@
                 font-weight: 400;
                 font-size: 20px;
                 line-height: 30px;
+            }
+            .Cancel_Button:active{
+                box-shadow: 0 5px #666;
+                transform: translateY(2px);
+                background-color: #f80707bc;
             }
         }
 
