@@ -3,8 +3,8 @@
 .SidebarCategory{
     border-radius: 6px;
     color: black;
-    height: 80px;
     width: 80px;
+    height: 80px;
     background-color: white;
     border: 1px solid black;
     align-items: center;
@@ -12,17 +12,11 @@
     justify-content: center;
     
 
-    // .SidebarCategory:active{
-    //     background-color: #003049;
-    //     color: white;
-    // }
-    // .SidebarCategory:hover{
-        
-    // }
-
     p{
-        font-size: $bodyFontSize;
-        color: black;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 14px;
     }
 }
 
@@ -38,16 +32,10 @@
     justify-content: center;
     
 
-    // .SidebarCategory:active{
-    //     background-color: #003049;
-    //     color: white;
-    // }
-    // .SidebarCategory:hover{
-        
-    // }
-
     p{
-        font-size: $bodyFontSize;
-        color: white;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 14px;
     }
 }

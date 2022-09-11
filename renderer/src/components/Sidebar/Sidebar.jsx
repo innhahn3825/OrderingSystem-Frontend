@@ -14,9 +14,10 @@ const Sidebar= ({page}) => {
         <Image
             src="/images/logo.png" 
             alt="Escobar Logo"
-            width = '80'
-            height = '80'
+            width = '85'
+            height = '85'
             objectFit='contain'
+            draggable = 'false'
         /> 
         </div>
 

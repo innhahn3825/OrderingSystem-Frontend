@@ -31,11 +31,22 @@
     gap: 10px;
     padding-bottom: 20px;
     padding-top: 20px;
+    padding-left: 10px;
     p{
         font-family: SF Pro Text;
         font-style: Medium;
+        font-weight: 500;
         font-size: 16px;
         line-height: 100%;
+        margin-left: 10px;
+        margin-bottom: 5px;
+    }
+    button{
+        background-color: #fafafa;
+        border: 1px solid #fafafa;    
+    }
+    button:active{
+        transform: translateX(-3px);
     }
 }
 

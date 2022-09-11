@@ -29,8 +29,6 @@ const LoginPage = () => {
 
   const successfullLoginActions = (employeeName) => {
     accountOnChange(account.accountUsername, account.accountPassword, employeeName);
-    // localStorage.setItem("username", employeeName);
-    // console.log(employeeName);
     router.replace("/dashboard");
   };
 

@@ -94,7 +94,10 @@ const PaymentPage = () => {
           orderCardOnClick={handleOrderCardOnClick}
           voidButtonOnClick={handleVoidButtonOnClick}
         />
-        <PaymentOrderTab orderTabItems={orderTabItems} />
+        <PaymentOrderTab 
+        orderTabItems={orderTabItems} 
+        orderCardOnClick={handleOrderCardOnClick}
+        />
       </div>
     </div>
   );

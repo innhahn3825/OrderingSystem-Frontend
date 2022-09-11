@@ -7,6 +7,7 @@ import { UserProvider } from "../src/components/contexts/UserContext";
 
 export default function (props) {
   const { Component, pageProps } = props;
+  
 
   React.useEffect(() => {
     const jssStyles = document.querySelector("#jss-server-side");
@@ -32,6 +33,7 @@ export default function (props) {
           <div className={styles.content}>
             <Component {...pageProps} />
           </div>
+          
         </div>
       </UserProvider>
     </React.Fragment>

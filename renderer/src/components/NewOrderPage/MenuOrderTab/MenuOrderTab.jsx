@@ -1,13 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import styles from './MenuOrderTab.module.scss'
 import Image from "next/image";
-import Link from "next/link";
 import { MenuOrderTabCard } from "../../ComponentIndex";
 import shortid from 'shortid';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
-import Toast from '../../Toast/Toast'
 import { toast } from 'react-toastify';
 
 const MenuOrderTab = ({
@@ -41,6 +39,7 @@ const MenuOrderTab = ({
         0
       )
     );
+    // d pko sure unsaon pag gamit ug outer variables tunon pa nko ni
   }, [menuOnCategory]);
 
 
@@ -56,6 +55,7 @@ const MenuOrderTab = ({
             width="20"
             height="20"
             objectFit="cover"
+            draggable = 'false'
           />
         </button>
       </div>
@@ -92,6 +92,7 @@ const MenuOrderTab = ({
                       width="100"
                       height="100"
                       objectFit="contain"
+                      draggable = 'false'
                     />
                   </div>
 
@@ -113,6 +114,7 @@ const MenuOrderTab = ({
             width="20"
             height="20"
             objectFit="cover"
+            draggable = 'false'
           />
         </div>
       </div>

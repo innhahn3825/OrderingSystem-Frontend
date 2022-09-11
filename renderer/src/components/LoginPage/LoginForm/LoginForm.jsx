@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styles from "./LoginForm.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -8,6 +8,20 @@ const LoginForm = ({ account, usernameOnChange, passwordOnChange, loginOnClick }
   // const loginOnClick = () => {
   //   // router.push("/dashboard.jsx");
   // }
+  useEffect(() => {
+    const listener = event => {
+      if (event.code === "Enter" || event.code === "NumpadEnter") {
+        console.log("Enter key was pressed. Run your function.");
+        event.preventDefault();
+        loginOnClick();
+      }
+    };
+    document.addEventListener("keydown", listener);
+    return () => {
+      document.removeEventListener("keydown", listener);
+    };
+  }, []);
+
   return (
     <div className={styles["Container"]}>
       <div className={styles["Form"]}>

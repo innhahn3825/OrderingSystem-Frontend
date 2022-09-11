@@ -6,9 +6,7 @@ const MenuOrderTabCard = ({title, price, quantity, quantityOnChange, handleDelet
 
   return (
         <div className={styles['MenuOrderTabCard']}>
-          {/* <MenuCard/> */}
           <div className={styles['Txt-Section']}>
-
             <div className={styles['Title-Section']}>
               <h2> {title}</h2>
                 <div className={styles['Counter-Section']}>
@@ -19,6 +17,7 @@ const MenuOrderTabCard = ({title, price, quantity, quantityOnChange, handleDelet
                   width="25"
                   height="25"
                   objectFit="cover"
+                  draggable = 'false'
                 />  
                 </button>
                 <h2> {quantity} </h2>
@@ -29,6 +28,7 @@ const MenuOrderTabCard = ({title, price, quantity, quantityOnChange, handleDelet
                   width="25"
                   height="25"
                   objectFit="cover"
+                  draggable = 'false'
                 />      
                 </button>
               </div>
@@ -44,6 +44,7 @@ const MenuOrderTabCard = ({title, price, quantity, quantityOnChange, handleDelet
                       width="15"
                       height="15"
                       objectFit="cover"
+                      draggable = 'false'
                     />  
                   </button>           
                 </div>

@@ -2,12 +2,20 @@
 
 .container {
     display: flex;
-    justify-content: right;
     padding: 1.1rem 1rem;
     padding-left: 20rem;
+    background-color: #fafafa;
+    justify-content:right;
+    align-items:center;
+    .Text{
+        position:absolute;
+        margin-right: 550px;
+    }
     .buttons {
         display: flex;
         align-items: center;
+        justify-content: right;
+
         gap: 1rem;
         .button {
             background: none;
@@ -24,3 +32,6 @@
         }
     }
 }
+
+
+

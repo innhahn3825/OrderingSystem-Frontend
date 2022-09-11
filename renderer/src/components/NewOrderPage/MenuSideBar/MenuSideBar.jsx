@@ -6,29 +6,34 @@ import { MenuSideBarCategory } from "../../ComponentIndex";
 import Link from 'next/link';
 
 
+
 const MenuSideBar = ({items, categoryOnChange, currentMenuCategory}) => {
 
   return (
     <div className={styles['MenuSideBar']}>
-      <Link href = "/dashboard"> 
         <div className={styles['back-section']} >
+        <Link href = "/dashboard"> 
+        <button>
         <Image
             src="/images/arrow-left.svg" 
             alt="Escobar Logo"
             width = '24'
             height = '24'
             objectFit='contain'
+            draggable = 'false'
         /> 
+        </button>
+        </Link>
         <p> Back </p>
         </div>
-        </Link>
         <div className={styles['img-section']}>
         <Image
             src="/images/logo.png" 
             alt="Escobar Logo"
-            width = '80'
-            height = '80'
+            width = '85'
+            height = '85'
             objectFit='contain'
+            draggable = 'false'
         /> 
         </div>
 
@@ -39,9 +44,7 @@ const MenuSideBar = ({items, categoryOnChange, currentMenuCategory}) => {
               </div>
             )
           })}
-
-        </div>
-        
+      </div>        
 
      
   )
