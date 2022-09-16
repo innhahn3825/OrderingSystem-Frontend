@@ -96,7 +96,7 @@ const PaymentPage = () => {
         />
         <PaymentOrderTab 
         orderTabItems={orderTabItems} 
-        orderCardOnClick={handleOrderCardOnClick}
+        orderCardSelected={orderCardSelected}
         />
       </div>
     </div>
