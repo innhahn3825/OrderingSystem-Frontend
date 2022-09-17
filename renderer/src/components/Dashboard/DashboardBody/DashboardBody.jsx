@@ -4,7 +4,8 @@ import Clock from 'react-clock';
 import 'react-clock/dist/Clock.css';
 
 
-const DashboardBody = () => {
+const DashboardBody = ({ unavailableMenu }) => {
+  console.log(unavailableMenu);
   const [value, setValue] = useState(new Date());
   
     useEffect(() => {

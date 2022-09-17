@@ -5,11 +5,24 @@ import { Sidebar, DashboardBody } from "../ComponentIndex";
 import Link from 'next/link';
 import Toast from "../Toast/Toast";
 import { toast } from "react-toastify";
+import Rest from '../../rest/Rest.tsx';
+
+const INITIAL_URL = "http://localhost:8080/api/v1";
 
 const Dashboard= () => {
 
+  const rest = new Rest();
+
+  const [unavailableMenu, setUnavailableMenu] = useState([])
+
+  const handleUnavialableMenuOnLoad = (data) =>{
+    setUnavailableMenu(data);
+  }
+
   useEffect(() =>{
-    // toast.success("Successfully Logged In`");
+    rest.get(
+      `${INITIAL_URL}/menu/unavailable`, handleUnavialableMenuOnLoad
+    );
   },[])
 
   return (
@@ -20,7 +33,7 @@ const Dashboard= () => {
           </div>
 
           <div className={styles['Component']}>
-            <DashboardBody/>
+            <DashboardBody unavailableMenu={unavailableMenu}/>
           </div>
 
 
