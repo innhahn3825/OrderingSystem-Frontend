@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styles from './DashBoardTable.module.scss';
-import MenuOnCategory from '../../../../models/MenuOnCategory.tsx';
-import Rest from '../../../../rest/Rest.tsx';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Modal from '@mui/material/Modal';
+import Image from "next/image";
 
 
 const data = [
@@ -25,67 +27,66 @@ const data = [
   },
 ]
 
+const DashboardTable = ({ unavailableMenu }) => {
+        const [open, setOpen] = React.useState(false);
+        const handleOpen = () => setOpen(true);
+        const handleClose = () => setOpen(false);
+        const [selectMenu, setSelectedMenu] = useState([]);
 
-const DashboardTable = () => {
-        const rest = new Rest();
-
-        const { employeeName } = useUser();
-        const [employeeData, setEmployeeData] = React.useState(data)
-        const [currentMenuCategory, setCurrentMenuCategory] = useState();
-        const[menusBasedOnCategory, setMenusBasedOnCategory] = useState([]);
-        const[menuOnCategory, setMenuOnCategory] = useState(new MenuOnCategory("", []));
-
-
-        const getAllMenusBasedOnCategory = () => {
-          rest.getMenuBasedOnCategory(
-            `${INITIAL_URL}/orders/menu-on-category`,
-            menuOnCategory.toJson(),
-            handleMenusBasedOnCategoryLoad
-          );
-        };
-
-        const handleMenusBasedOnCategoryLoad = (data) => {
-          setMenusBasedOnCategory(data);
+        const handleOnClickModal = (unavailableMenu) => {
+          setSelectedMenu(unavailableMenu);
+          handleOpen();
         }
-        
-        useEffect(() => {
-          getAllMenusBasedOnCategory();
-        }, [menuOnCategory]);
-
-        useEffect(() => {
-          setMenuOnCategory(
-            new MenuOnCategory(
-              activeMenuCategories[0],
-              menuOnCategory.orderMenu
-            )
-          );
-        }, [activeMenuCategories]);
+ 
         return (
           <div className={styles['container']}> 
             <h1 className={styles['Title']}> Out of Stock Items </h1>
             <table>
               <thead>
                 <tr>
-                  <th>Menu Title </th>
-                  <th>Menu Price </th>
+                  <th> Menu Title </th>
+                  <th> Status </th>
                 </tr>
               </thead>
               <tbody>
-                {employeeData.map(({ employeeId, name, email}) => (
-                  <tr key={employeeId}>
+                {unavailableMenu && unavailableMenu.map(unavailableMenu => (
+                  <tr key={unavailableMenu.menuId}>
                     <td>
-                      <input
-                        name="name"
-                        value={name}
-                        type="text"
-                      />
+                      <button 
+                      onClick= {()=>{handleOnClickModal(unavailableMenu)}}
+                      className={styles['Column-1']}>
+                        {unavailableMenu.menuName}
+                      </button>
+                        <div>
+                        <Modal open={open} onClose={handleClose}>
+                            <Box className={styles['style']}>
+                                <Button onClick={handleClose} className={styles['Close_Button']}> X </Button>
+                                <div className={styles['Image-Section']}>
+                                        <Image
+                                            src="/images/logo.png"
+                                            alt="Escobar Logo"
+                                            width="40"
+                                            height="40"
+                                            objectFit="contain"
+                                        />
+                                </div>
+                                <div className={styles['Wrapper']}>
+
+                                    <div className={styles['Text-Section']}>
+                                        <h1> Menu Id: {selectMenu.menuId} </h1>
+                                        <h1> Menu Name:  {selectMenu.menuName} </h1>
+                                        <h1> Menu Price: {selectMenu.menuPrice} </h1>
+                                        <h1> Menu Category: {selectMenu.menuCategoryName} </h1>
+                                    </div>
+                                </div>
+                              </Box>
+                            </Modal>
+                          </div>
                     </td>
                     <td>
-                      <input
-                        name="email"
-                        value={email}
-                        type="email"
-                      />
+                      <p className={styles['Column-2']}>
+                        Out of Stock
+                      </p>
                     </td>
                   </tr>
                 ))}
@@ -95,8 +96,7 @@ const DashboardTable = () => {
         )
       }
 
-  
-  
+
   export default DashboardTable
   
   

@@ -24,7 +24,7 @@ const DashboardBody = ({ unavailableMenu }) => {
           <div className={styles['Container']}> 
             <Clock value={value} renderNumbers="true" size="350" className={styles['Clock--Container']}/>
               <div className={styles['Txt-Container']}>
-                <DashboardTable/>
+                <DashboardTable unavailableMenu={unavailableMenu}/>
               </div>
           </div>
         </div>

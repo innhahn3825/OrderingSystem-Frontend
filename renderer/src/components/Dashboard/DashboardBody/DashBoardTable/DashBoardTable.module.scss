@@ -8,6 +8,7 @@
   margin-top: 10px;
     
   table {
+    margin-top: 20px;
     border-collapse: collapse;
     width: 100%;
   }
@@ -17,7 +18,8 @@
     padding: 12px;
     border: 1px solid #eeeeee;
     text-align: left;
-    background-color: rgba(217, 221, 146, 0.2);
+    background-color: #003049;
+    color: white;
   }
 
   tr td {
@@ -25,23 +27,29 @@
     text-align: left;
   }
 
-  input {
+  .Column-1{
     font-size: 16px;
     background-color: transparent;
     border: none;
     width: 91%;
     padding: 12px 12px;
     font-family: 'Poppins', sans-serif;
-  }
+    text-align: left;
 
-  input:hover {
+  }
+  .Column-1:hover{
     background-color: #fffaf3;
   }
 
-  input:focus {
-    outline: 1px solid #ccc;
-    border: 1px solid #ccc;
-  }
+  .Column-2{
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    width: 91%;
+    padding: 12px 12px;
+    font-family: 'Poppins', sans-serif;
+  } 
+
 }
 
 .title {
@@ -50,3 +58,50 @@
   margin-bottom: 30px;
 }
 
+
+.style {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 566px;
+  height: 410px;
+  display: flex;
+  background-color: #FAFAFA;
+  border: 3px solid;
+  border-radius: 6px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  .Wrapper{ 
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 100px;
+
+  }
+  .Close_Button{
+      position:absolute;
+      top:0;
+      right:0;
+      background-color: red;
+      color: white;
+      border: 2px solid #000000;
+
+  }
+  .Image-Section {
+      margin-left: 10px;
+      margin-top: 5px;
+  }
+
+  .Text-Section {
+      h1 {
+
+          font-style: normal;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 20px;
+          margin-bottom: 10px;
+      }
+
+  }
+}
