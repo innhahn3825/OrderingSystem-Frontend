@@ -5,8 +5,6 @@ import { MenuSideBarCategory } from "../../ComponentIndex";
 // import { MenuData } from "../../../data/DataIndex";
 import Link from 'next/link';
 
-
-
 const MenuSideBar = ({items, categoryOnChange, currentMenuCategory}) => {
 
   return (

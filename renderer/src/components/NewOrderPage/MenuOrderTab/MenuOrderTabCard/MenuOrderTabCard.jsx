@@ -49,8 +49,6 @@ const MenuOrderTabCard = ({title, price, quantity, quantityOnChange, handleDelet
                   </button>           
                 </div>
             </div>
-
-
           </div>
         </div>
 

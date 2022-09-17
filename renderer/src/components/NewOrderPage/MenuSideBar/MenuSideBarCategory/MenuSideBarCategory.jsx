@@ -10,7 +10,6 @@ const MenuSideBarCategory = ({Title, isSelected}) => {
         <div className={[styles['MenuSideBarCategory'], isSelected && styles["MenuSideBarCategory--selected"]].join(" ")}>
             <p> {Title} </p>
         </div>
-
   )
 }
 

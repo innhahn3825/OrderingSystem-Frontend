@@ -30,7 +30,6 @@ const MenuOrderTab = ({
     setCustomerPayment(e.target.value);
   }
 
-
   useEffect(() => {
     setTotal(
       menuOnCategory.orderMenu.reduce(
@@ -41,8 +40,6 @@ const MenuOrderTab = ({
     );
     // d pko sure unsaon pag gamit ug outer variables tunon pa nko ni
   }, [menuOnCategory]);
-
-
 
   return (
     <div className={styles["MenuOrderTab"]}>

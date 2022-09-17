@@ -66,7 +66,7 @@ const LoginForm = ({ account, usernameOnChange, passwordOnChange, loginOnClick }
               placeholder="Enter your password."
             />
           </div>
-
+          
             <button className={styles["Button"]} onClick={loginOnClick}>
               Login
             </button>

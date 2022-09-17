@@ -23,6 +23,7 @@ export { default as MenuOrderTabCard } from "./NewOrderPage/MenuOrderTab/MenuOrd
 
 // Dashboard Component
 export { default as DashboardBody } from "./Dashboard/DashboardBody/DashboardBody.jsx";
+export { default as DashboardTable } from "./Dashboard/DashboardBody/DashBoardTable/DashboardTable.jsx";
 
 // Payment Page Component
 export { default as PaymentPageBody } from "./PaymentPage/PaymentPageBody/PaymentPageBody.jsx";

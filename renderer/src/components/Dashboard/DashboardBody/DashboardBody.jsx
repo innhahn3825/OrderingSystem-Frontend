@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './DashboardBody.module.scss';
 import Clock from 'react-clock';
 import 'react-clock/dist/Clock.css';
-
+import { DashboardTable } from  "../../ComponentIndex";
 
 const DashboardBody = () => {
   const [value, setValue] = useState(new Date());
@@ -23,7 +23,7 @@ const DashboardBody = () => {
           <div className={styles['Container']}> 
             <Clock value={value} renderNumbers="true" size="350" className={styles['Clock--Container']}/>
               <div className={styles['Txt-Container']}>
-                <h1> Escobar Ordering System </h1>
+                <DashboardTable/>
               </div>
           </div>
         </div>

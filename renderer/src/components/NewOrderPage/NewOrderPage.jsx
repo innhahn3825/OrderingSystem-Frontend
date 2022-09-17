@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
-
 import styles from './NewOrderPage.module.scss'
 import { MenuSideBar, Menu, MenuOrderTab }  from "../ComponentIndex";
-// import { MenuData } from "../../data/DataIndex";
-
 import Rest from '../../rest/Rest.tsx';
 import MenuOnCategory from '../../models/MenuOnCategory.tsx';
-import OrderMenu from '../../models/OrderMenu.tsx';
 import Order from '../../models/Order.tsx';
 import CustomerFoodOrder from '../../models/CustomerFoodOrder.tsx';
 import FoodOrder from '../../models/FoodOrder.tsx';
@@ -14,6 +10,8 @@ import MenuModel from '../../models/Menu.tsx';
 import { useUser } from '../contexts/UserContext';
 import Toast from '../Toast/Toast';
 
+import OrderMenu from '../../models/OrderMenu.tsx';
+// import { MenuData } from "../../data/DataIndex";
 const INITIAL_URL = "http://localhost:8080/api/v1";
 
 const NewOrderPage = () => {
@@ -30,8 +28,6 @@ const NewOrderPage = () => {
   const[menuOnCategory, setMenuOnCategory] = useState(new MenuOnCategory("", []));
 
   const [payment, setPayment] = useState(0);
-
-
 
   const handleCartChange = (newMenu) => {
     newMenu.orderMenuQuantity = 1;
@@ -218,10 +214,6 @@ const NewOrderPage = () => {
           payButtonOnClick={handlePayButtonOnClick}
         />
       </div>
-
-      {/* <div className={styles['Component-Ordertab']}>
-              <MenuOrderTab/>
-            </div> */}
     </div>
   );
 }
