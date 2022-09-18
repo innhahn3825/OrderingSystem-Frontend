@@ -38,7 +38,6 @@ const MenuOrderTab = ({
         0
       )
     );
-    // d pko sure unsaon pag gamit ug outer variables tunon pa nko ni
   }, [menuOnCategory]);
 
   return (
