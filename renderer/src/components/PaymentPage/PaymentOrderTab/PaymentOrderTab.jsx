@@ -19,7 +19,7 @@ const PaymentOrderTab = ({orderTabItems, orderCardSelected}) => {
       </div>
 
       <div className={styles['title-section']}>
-        <p> Item # {orderCardSelected} </p>
+        <p> Order # {orderCardSelected} </p>
         <p> Qty </p>
       </div>
 
