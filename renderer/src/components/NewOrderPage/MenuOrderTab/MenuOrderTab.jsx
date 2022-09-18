@@ -24,6 +24,7 @@ const MenuOrderTab = ({
     setOpen(false);
   };
   const handleOpen = () => {
+    console.log("open");
     setOpen(true);
   };
   const customerPaymentOnChange = (e) => {
@@ -51,7 +52,7 @@ const MenuOrderTab = ({
             width="20"
             height="20"
             objectFit="cover"
-            draggable = 'false'
+            draggable="false"
           />
         </button>
       </div>
@@ -74,49 +75,64 @@ const MenuOrderTab = ({
           );
         })}
       </div>
-      <div className={styles["total-section"]}>
+      <div className={styles["total-section"]} onClick={handleOpen}>
         <div className={styles["total-section--wrapper"]}>
-        <h1 onClick={handleOpen}> $ {total}</h1>
-        <Modal open={open} onClose={handleClose}>
-              <Box className={styles['style']}>
-              <Button onClick={handleClose} className={styles['Close_Button']}> X </Button>
-                <div className={styles['Wrapper']}>
-                  <div className={styles['Image-Section']}>
-                    <Image
-                      src="/images/logo.png"
-                      alt="Escobar Logo"
-                      width="100"
-                      height="100"
-                      objectFit="contain"
-                      draggable = 'false'
-                    />
-                  </div>
-
-                  <div className={styles['Text-Section']}>
-                    <h1> Please input the Customer Payment </h1>
-                      <div className={styles['Button-Section']}>
-                      <input value = {customerPayment} onChange = {customerPaymentOnChange} type="text" id="first" className={styles["Input-Forms"]} placeholder="Input the money of the customer" />
-                        <ChildModal className={styles['Confirm_Button']} payButtonOnClick = {payButtonOnClick} total = {total} customerPayment = {customerPayment} handleMainModalClose = {handleClose} />
-                      </div>
-                  </div>
-                </div>
-              </Box>
-              </Modal>
-        <div onClick={handleOpen} className={styles["pay-section"]}>
-          <h2 > Pay </h2>
-          <Image
-            src="/images/chevron.svg"
-            alt="Chevron icon"
-            width="20"
-            height="20"
-            objectFit="cover"
-            draggable = 'false'
-          />
+          <h1> $ {total}</h1>
+          <div className={styles["pay-section"]}>
+            <h2> Pay </h2>
+            <Image
+              src="/images/chevron.svg"
+              alt="Chevron icon"
+              width="20"
+              height="20"
+              objectFit="cover"
+              draggable="false"
+            />
+          </div>
         </div>
       </div>
 
+      <Modal open={open} onClose={handleClose}>
+        <Box className={styles["style"]}>
+          <Button onClick={handleClose} className={styles["Close_Button"]}>
+            {" "}
+            X{" "}
+          </Button>
+          <div className={styles["Wrapper"]}>
+            <div className={styles["Image-Section"]}>
+              <Image
+                src="/images/logo.png"
+                alt="Escobar Logo"
+                width="100"
+                height="100"
+                objectFit="contain"
+                draggable="false"
+              />
+            </div>
 
-    </div>
+            <div className={styles["Text-Section"]}>
+              <h1> Please input the Customer Payment </h1>
+              <div className={styles["Button-Section"]}>
+                <input
+                  value={customerPayment}
+                  onChange={customerPaymentOnChange}
+                  type="text"
+                  id="first"
+                  className={styles["Input-Forms"]}
+                  placeholder="Input the money of the customer"
+                />
+                <ChildModal
+                  className={styles["Confirm_Button"]}
+                  payButtonOnClick={payButtonOnClick}
+                  total={total}
+                  customerPayment={customerPayment}
+                  handleMainModalClose={handleClose}
+                />
+              </div>
+            </div>
+          </div>
+        </Box>
+      </Modal>
     </div>
   );
 };

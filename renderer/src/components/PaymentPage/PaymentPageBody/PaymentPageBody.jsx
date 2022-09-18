@@ -38,6 +38,7 @@ const PaymentPageBody = ({
               ordernum={item.orderId}
               quantity={item.customerFoodOrders.length}
               price={item.payment}
+              orderDate={item.orderTime}
               isSelected={orderCardSelected === item.orderId}
               voidButtonOnClick={voidButtonOnClick}
             />

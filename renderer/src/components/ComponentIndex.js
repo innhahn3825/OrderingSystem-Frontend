@@ -1,6 +1,6 @@
 /* PAGES */
 export { default as LoginPage } from "./LoginPage/LoginPage.jsx";
-export { default as DashboardPage } from "./Dashboard/Dashboard.jsx";
+export { default as DashboardPage } from "./Dashboard/DashboardPage.jsx";
 export { default as NewOrderPage } from "./NewOrderPage/NewOrderPage.jsx";
 export { default as PaymentPage } from "./PaymentPage/PaymentPage.jsx"
 
@@ -30,6 +30,3 @@ export { default as PaymentPageBody } from "./PaymentPage/PaymentPageBody/Paymen
 export { default as PaymentOrderTab } from "./PaymentPage/PaymentOrderTab/PaymentOrderTab.jsx"
 export { default as PaymentOrderTabCard } from "./PaymentPage/PaymentOrderTab/PaymentOrderTabCard.jsx/PaymentOrderTabCard.jsx"
 export { default as PaymentPageCard } from "./PaymentPage/PaymentPageBody/PaymentPageCard/PaymentPageCard.jsx"
-
-// TitleBar
-export { default as TitleBar} from "./TitleBar/TitleBar.jsx"

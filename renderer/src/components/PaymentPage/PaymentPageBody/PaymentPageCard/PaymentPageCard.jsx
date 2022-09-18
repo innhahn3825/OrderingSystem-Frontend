@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import Image from "next/image";
 
-const PaymentPageCard = ({ordernum, quantity, price, isSelected, voidButtonOnClick}) => {
+const PaymentPageCard = ({ordernum, quantity, price, isSelected, voidButtonOnClick, orderDate}) => {
 
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
@@ -19,6 +19,7 @@ const PaymentPageCard = ({ordernum, quantity, price, isSelected, voidButtonOnCli
             <div className={styles['Second-Section']}>
                 <div className={styles['Quantity-Section']}>
                     <h3> Number of Items: {quantity} </h3>
+                    <h3> Order Time: {orderDate.split("T").join(" – ")} </h3>
                 </div>
 
                 <div className={styles['Price-Section']}>

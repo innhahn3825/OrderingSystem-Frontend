@@ -12,7 +12,7 @@ import Toast from '../Toast/Toast';
 
 import OrderMenu from '../../models/OrderMenu.tsx';
 // import { MenuData } from "../../data/DataIndex";
-const INITIAL_URL = "http://localhost:8080/api/v1";
+const INITIAL_URL = process.env.NEXT_PUBLIC_INITIAL_URL;
 
 const NewOrderPage = () => {
 

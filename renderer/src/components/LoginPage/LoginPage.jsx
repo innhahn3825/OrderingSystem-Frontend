@@ -7,7 +7,7 @@ import AccountLogin from '../../models/AccountLogin.tsx';
 import Toast from "../Toast/Toast";
 import {useUser, useUserUpdate} from '../contexts/UserContext';
 
-const INITIAL_URL = "http://localhost:8080/api/v1";
+const INITIAL_URL = process.env.NEXT_PUBLIC_INITIAL_URL;
 
 const LoginPage = () => {
 
