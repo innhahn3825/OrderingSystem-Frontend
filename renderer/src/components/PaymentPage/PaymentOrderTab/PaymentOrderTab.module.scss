@@ -31,13 +31,16 @@
     flex-direction: row;
     justify-content: space-between;
     padding-top: 30px;
-    gap: 210px;
+    gap: 195px;
 
     p{
         font-style: normal;
         font-weight: 700;
-        font-size: 16px;
+        font-size: 18px;
         line-height: 20px;
+    }
+    .Quantity{
+        margin-right: 5px;
     }
 
 }

@@ -35,7 +35,7 @@ const MenuOrderTabCard = ({title, price, quantity, quantityOnChange, handleDelet
             </div>
 
             <div className={styles['Price-Section']}>
-              <p> $ {price * quantity}</p>
+              <p> ₱ {price * quantity}</p>
                 <div className={styles['Remove-Section']}>
                   <button onClick={()=>handleDeleteItemButtonOnClick(title)}>
                     <Image

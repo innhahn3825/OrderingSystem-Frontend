@@ -6,26 +6,6 @@ import Modal from '@mui/material/Modal';
 import Image from "next/image";
 
 
-const data = [
-  {
-    employeeId: '01',
-    name: 'John Doe',
-    email: 'johndoe@email.com',
-    position: 'Frontend Developer',
-  },
-  {
-    employeeId: '02',
-    name: 'Sara',
-    email: 'sara@email.com',
-    position: 'HR Executive',
-  },
-  {
-    employeeId: '03',
-    name: 'Mike',
-    email: 'mike@email.com',
-    position: 'Backend Developer',
-  },
-]
 
 const DashboardTable = ({ unavailableMenu }) => {
         const [open, setOpen] = React.useState(false);
@@ -44,7 +24,7 @@ const DashboardTable = ({ unavailableMenu }) => {
             <table>
               <thead>
                 <tr>
-                  <th> Menu Title </th>
+                  <th> Item </th>
                   <th> Status </th>
                 </tr>
               </thead>

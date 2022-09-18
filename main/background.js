@@ -48,28 +48,28 @@ if (isProd) {
       kill(pid.tcp[0]);
     });
   } else {
-    log.info(`Starting the spring boot app in port ${BACKEND_PORT}`);
-    var pid;
-    var child = require('child_process').spawn(
-      'java', ['-jar', JAR_PATH, `--server.port=${BACKEND_PORT}`]
-    );
+    // log.info(`Starting the spring boot app in port ${BACKEND_PORT}`);
+    // var pid;
+    // var child = require('child_process').spawn(
+    //   'java', ['-jar', JAR_PATH, `--server.port=${BACKEND_PORT}`]
+    // );
 
-    while(true){
-      try{
-        pid = await findPidFromPort(BACKEND_PORT);
-        break;
-      } catch(error){
-      }
-    }
+    // while(true){
+    //   try{
+    //     pid = await findPidFromPort(BACKEND_PORT);
+    //     break;
+    //   } catch(error){
+    //   }
+    // }
 
     const port = process.argv[2];
     await mainWindow.loadURL(`http://localhost:${port}/home`);
     mainWindow.webContents.openDevTools();
 
-    mainWindow.on('closed', function () {
-      log.info("Closing this PID: ", pid.tcp[0]);
-      kill(pid.tcp[0]);
-    })
+    // mainWindow.on('closed', function () {
+    //   log.info("Closing this PID: ", pid.tcp[0]);
+    //   kill(pid.tcp[0]);
+    // })
   }
 })();
 

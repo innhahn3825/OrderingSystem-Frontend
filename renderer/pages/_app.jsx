@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Head from "next/head";
 import TitleBar from "../src/components/Titlebar/TitleBar.jsx";
 import styles from "./_app.module.scss";
@@ -8,8 +8,13 @@ import { UserProvider } from "../src/components/contexts/UserContext";
 export default function (props) {
   const { Component, pageProps } = props;
   
+  // const [titleAlignment, setTitleAlignment] = useState("Left");
 
-  React.useEffect(() => {
+  // const handleTitleAlignmentOnChange = (currentTitleAlignment) => {
+  //   setTitleAlignment(currentTitleAlignment);    
+  // }
+
+    React.useEffect(() => {
     const jssStyles = document.querySelector("#jss-server-side");
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
@@ -26,10 +31,6 @@ export default function (props) {
       </Head>
       <UserProvider>
         <div className={styles.container}>
-          <div className={styles.title_bar}>
-            <TitleBar />
-          </div>
-
           <div className={styles.content}>
             <Component {...pageProps} />
           </div>

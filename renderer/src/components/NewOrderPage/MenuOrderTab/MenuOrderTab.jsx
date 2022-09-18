@@ -41,6 +41,9 @@ const MenuOrderTab = ({
     );
   }, [menuOnCategory]);
 
+
+
+
   return (
     <div className={styles["MenuOrderTab"]}>
       <div className={styles["txt-section"]}>
@@ -77,7 +80,7 @@ const MenuOrderTab = ({
       </div>
       <div className={styles["total-section"]} onClick={handleOpen}>
         <div className={styles["total-section--wrapper"]}>
-          <h1> $ {total}</h1>
+          <h1> ₱ {total}</h1>
           <div className={styles["pay-section"]}>
             <h2> Pay </h2>
             <Image
@@ -175,7 +178,7 @@ function ChildModal({payButtonOnClick, total, customerPayment, handleMainModalCl
                 <div className={styles['Text-Section']}>
                   <h1> The Change for the transaction is:  </h1>
                     <div className={styles['Change-Section']}>
-                      <h1> {customerPayment - total} </h1> 
+                      <h1> ₱ {customerPayment - total} </h1> 
                     </div>
                 </div>
             </div>

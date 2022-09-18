@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styles from './PaymentPageCard.module.scss';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -13,18 +13,22 @@ const PaymentPageCard = ({ordernum, quantity, price, isSelected, voidButtonOnCli
 
   return (
     <div className={[styles['PaymentPageCard'], isSelected && styles['PaymentPageCard--selected']].join(" ")}>
+        <div className={styles['Section']}>
             <div className={styles['First-Section']}>
-                <h3> Order # {ordernum} </h3>
-            </div>
-            <div className={styles['Second-Section']}>
+                <h3> Order # {ordernum} </h3>            
                 <div className={styles['Quantity-Section']}>
                     <h3> Number of Items: {quantity} </h3>
-                    <h3> Order Time: {orderDate.split("T").join(" – ")} </h3>
                 </div>
+            </div>
 
-                <div className={styles['Price-Section']}>
-                    <h3> $ {price} </h3>
+   
+
+                <div className={styles['Second-Section']}>
+                    <h4 className={styles['Order-Time']}> Order Time: {orderDate.split("T").join(" – ")} </h4>
+                    <div className={styles['Price-Section']}>
+                    <h3> ₱ {price} </h3>
                     <button onClick={handleOpen}> Void </button>
+                    </div>
                     <div>
                         <Modal open={open} onClose={handleClose}>
                             <Box className={styles['style']}>

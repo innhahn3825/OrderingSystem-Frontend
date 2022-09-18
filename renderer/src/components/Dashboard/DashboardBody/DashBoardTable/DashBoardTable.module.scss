@@ -13,20 +13,21 @@
     margin-top: 20px;
     border-collapse: collapse;
     width: 100%;
-    
+    border: 1px solid black;
+
   }
 
   tr th {
     font-size: 18px;
     padding: 12px;
-    border: 1px solid #eeeeee;
-    text-align: left;
+    border: 1px solid black;
+    align-items: center;
     background-color: #003049;
     color: white;
   }
 
   tr td {
-    border: 1px solid #eeeeee;
+    border: 1px solid black;
     text-align: left;
   }
 
@@ -41,7 +42,7 @@
 
   }
   .Column-1:hover{
-    background-color: #fffaf3;
+    background-color: #afc5d1;
   }
 
   .Column-2{
@@ -89,7 +90,6 @@
       background-color: red;
       color: white;
       border: 2px solid #000000;
-
   }
   .Image-Section {
       margin-left: 10px;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from './Dashboard.module.scss'
+import styles from './DashboardPage.module.scss'
 import Image from "next/image";
 import { Sidebar, DashboardBody } from "../ComponentIndex";
 import Link from 'next/link';

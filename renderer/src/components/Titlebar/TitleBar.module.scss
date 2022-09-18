@@ -1,16 +1,7 @@
 @import '../../styles/variables.scss';
 
-.container {
-    display: flex;
-    padding: 1.1rem 1rem;
-    padding-left: 20rem;
-    background-color: #fafafa;
-    justify-content:right;
-    align-items:center;
-    .Text{
-        position:absolute;
-        margin-right: 550px;
-    }
+
+
     .buttons {
         display: flex;
         align-items: center;
@@ -31,7 +22,51 @@
             }
         }
     }
+
+.container--Login {
+    display: flex;
+    padding: 1.1rem 1rem;
+    padding-left: 20rem;
+    background-color: #fafafa;
+    justify-content:right;
+}
+.container--Dashboard {
+    display: flex;
+    padding: 1.1rem 1rem;
+    padding-left: 20rem;
+    background-color: #fafafa;
+    justify-content:right;
+}
+.container--Payout {
+    display: flex;
+    padding: 1.1rem 1rem;
+    padding-left: 20rem;
+    background-color: #fafafa;
+    justify-content:right;
+
+}
+.container--Neworder {
+    display: flex;
+    padding: 1.1rem 1rem;
+    padding-left: 20rem;
+    background-color: #fafafa;
+    justify-content:right;
 }
 
 
-
+.Text--Login{
+    position:absolute;
+    margin-right: 1110px;
+}
+.Text--Dashboard{
+    position:absolute;
+    margin-right: 965px;
+}
+.Text--Payout{
+    position:absolute;
+    margin-right: 940px;
+}
+.Text--Neworder{
+    position:absolute;
+    margin-right: 940px;
+}
