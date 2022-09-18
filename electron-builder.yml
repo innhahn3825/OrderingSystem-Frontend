@@ -1,6 +1,6 @@
-appId: com.example.nextron
-productName: My Nextron App
-copyright: Copyright © 2018 Yoshihide Shiono
+appId: com.exe.OS
+productName: Ordering System
+copyright: Copyright © 2022 Jay Tan
 directories:
   output: dist
   buildResources: resources

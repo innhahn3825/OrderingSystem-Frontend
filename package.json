@@ -1,12 +1,12 @@
 {
-  "private": true,
-  "name": "my-nextron-app",
-  "description": "My application description",
+  "private": false,
+  "name": "ordering-system",
+  "description": "Escobar's Ordering System",
   "version": "1.0.0",
-  "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
+  "author": "Jay Tan <jaytan3825@gmail.com>",
   "main": "app/background.js",
   "scripts": {
-    "dev": "nextron",
+    "dev": "nextron -p 1114",
     "build": "nextron build",
     "postinstall": "electron-builder install-app-deps",
     "storybook": "start-storybook -p 6006",
@@ -19,11 +19,15 @@
     "@mui/material": "^5.10.3",
     "@storybook/preset-scss": "^1.0.3",
     "axios": "^0.27.2",
+    "electron-log": "^4.4.8",
     "electron-serve": "^1.1.0",
     "electron-store": "^8.0.1",
+    "find-pid-from-port": "^0.1.0",
+    "kill-port": "^2.0.1",
     "react-clock": "^3.1.0",
     "react-toastify": "^9.0.8",
     "shortid": "^2.2.16",
+    "tree-kill": "^1.2.2",
     "webkit-npm": "^3.1.1"
   },
   "devDependencies": {

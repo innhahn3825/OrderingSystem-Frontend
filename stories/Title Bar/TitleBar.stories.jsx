@@ -1,4 +1,4 @@
-import { TitleBar } from '../../renderer/src/components/ComponentIndex';
+import { TitleBar } from '../../renderer/src/components/Titlebar/TitleBar';
 
 export default {
   title: 'Title Bar',

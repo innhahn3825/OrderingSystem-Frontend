@@ -5,7 +5,7 @@ import Pagination from "../../models/Pagination.tsx";
 import Rest from "../../rest/Rest.tsx";
 import Toast from '../Toast/Toast';
 
-const INITIAL_URL = "http://localhost:8080/api/v1";
+const INITIAL_URL = process.env.NEXT_PUBLIC_INITIAL_URL;
 
 const PaymentPage = () => {
   

@@ -7,9 +7,9 @@ import Toast from "../Toast/Toast";
 import { toast } from "react-toastify";
 import Rest from '../../rest/Rest.tsx';
 
-const INITIAL_URL = "http://localhost:8080/api/v1";
+const INITIAL_URL = process.env.NEXT_PUBLIC_INITIAL_URL;
 
-const Dashboard= () => {
+const DashboardPage = () => {
 
   const rest = new Rest();
 
@@ -42,5 +42,5 @@ const Dashboard= () => {
   )
 }
 
-export default Dashboard
+export default DashboardPage
 
