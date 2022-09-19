@@ -275,63 +275,268 @@
 
     }
 
-    .Confirm_Button{
-        width: 128px;
-        height: 45.84px;
-        box-sizing: border-box;
-        background: #36CD1D;
-        border: 3px solid #000000;
-        color: white;
 
-        font-style: normal;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 30px;
-    }
-    .Confirm_Button:active{
-        box-shadow: 0 5px #666;
-        transform: translateY(4px);
-    }
 
     .Wrapper{ 
-
         justify-content: center;
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-left: 100px;
-
-        .Image-Section {
-            margin-bottom: 15px;
-        }
+        width: 50%;
 
         .Text-Section {
             display:flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-
-            h1 {
+            flex-direction: row;
+            width: 100%;
+            margin-bottom: 10px;
+            .Order-Text{
                 font-style: normal;
-                font-weight: 500;
+                font-weight: 700;
                 font-size: 20px;
                 line-height: 20px;
                 text-align: center;
-                
+                margin-right: auto;
+                margin-left: 5px; 
             }
-            .Change-Section {
-                margin-top: 20px;
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                width: 244px;
-                height: 52px;
-                background: #d7d3d3;
-                border: 2px solid #000000;
+            .Date-Text{
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 20px;
+                text-align: center;
+                margin-right: 5px;
+                margin-left: auto; 
             }
-    
         }
+        .Title-Section {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            width: 100%;
+            margin-bottom: 5px;
+
+            
+            .Qty-Text{
+                font-style: normal;
+                font-weight: 550;
+                font-size: 18px;
+                line-height: 20px;
+                margin-right: auto;
+                margin-left: 20px; 
+            }
+            .Title-Text{
+                font-style: normal;
+                font-weight: 550;
+                font-size: 18px;
+                line-height: 20px;
+                margin-left: 20px;
+
+            }
+            .Price-Text{
+                font-style: normal;
+                font-weight: 550;
+                font-size: 18px;
+                line-height: 20px;
+                margin-right: 10px;
+                margin-left: auto;     
+            }
+        }
+        .Component-Section{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin-bottom: 5px;
+            
+            .Quantity-Component{
+                font-family: 'ABeeZee';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 20px;
+                margin-right: auto;
+                margin-left: 30px; 
+
+            }
+            .Menuname-Component{
+                font-family: 'ABeeZee';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 20px; 
+                margin-left: 10px;
+            }
+            .Price-Component{
+                font-family: 'ABeeZee';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 20px;
+                margin-right: 10px;
+                margin-left: auto;                
+            }
+        }
+
+        .CustomerPayment-Section {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            width: 100%;
+            margin-bottom: 5px;
+
+            
+            .CustomerPayment{
+                font-family: 'ABeeZee';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 16px;
+                text-align: left;
+                margin-right: auto;
+                margin-left: 10px; 
+            }
+
+            .CustomerPaymentPrice{
+                display: flex;
+                margin-left: auto; 
+                margin-right: 10px;
+                font-family: 'ABeeZee';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 16px;
+            }
+        }
+
+        .Subtotal-Section {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            width: 100%;
+            margin-bottom: 5px;
+
+            .Subtotal{
+                font-family: 'ABeeZee';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 16px;
+                text-align: left;
+                margin-right: auto;
+                margin-left: 10px; 
+            }
+
+            .SubtotalPrice{
+                display: flex;
+                margin-left: auto; 
+                margin-right: 10px;
+                font-family: 'ABeeZee';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 16px;
+            }
+        }
+
+        .Discounted-Section {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            width: 100%;
+            margin-bottom: 5px;
+
+            .Discount{
+                font-family: 'ABeeZee';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 16px;
+                text-align: left;
+                margin-right: auto;
+                margin-left: 10px; 
+            }
+
+            .DiscountPrice{
+                display: flex;
+                margin-left: auto; 
+                margin-right: 10px;
+                font-family: 'ABeeZee';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 16px;
+            }
+        }
+
+        .Total-Section {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            width: 100%;
+            margin-bottom: 5px;
+
+            .Total{
+                font-family: 'ABeeZee';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 16px;
+                text-align: left;
+                margin-right: auto;
+                margin-left: 10px; 
+            }
+
+            .TotalPrice{
+                display: flex;
+                margin-left: auto; 
+                margin-right: 10px;
+                font-family: 'ABeeZee';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 16px;
+            }
+        }
+
+        .Change-Section {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            width: 100%;
+            margin-bottom: 5px;
+
+            .Change{
+                font-family: 'ABeeZee';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 16px;
+                text-align: left;
+                margin-right: auto;
+                margin-left: 10px; 
+            }
+
+            .ChangePrice{
+                display: flex;
+                margin-left: auto; 
+                margin-right: 10px;
+                font-family: 'ABeeZee';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 16px;
+            }
+            
+        }
+
 
     }
 }

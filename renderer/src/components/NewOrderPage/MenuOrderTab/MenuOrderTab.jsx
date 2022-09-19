@@ -17,7 +17,6 @@ const MenuOrderTab = ({
 }) => {
 
   const [total, setTotal] = useState(1);
-
   const [open, setOpen] = React.useState(false);
   const [customerPayment, setCustomerPayment] = useState(0);
   const [discountPayment, setDiscountPayment] = useState(0);
@@ -77,6 +76,7 @@ const MenuOrderTab = ({
                 price={item.menuPrice}
                 quantity={item.orderMenuQuantity}
                 quantityOnChange={handleQuantityOnChange}
+                numberOfServingsLeft={item.numberOfServingsLeft}
                 handleDeleteItemButtonOnClick={handleDeleteItemButtonOnClick}
               />
             </div>
@@ -153,6 +153,8 @@ const MenuOrderTab = ({
                   customerPayment={customerPayment}
                   handleMainModalClose={handleClose}
                   discountPayment={discountPayment}
+                  menuOnCategory={menuOnCategory}
+
                 />
               </div>
           </div>
@@ -162,7 +164,7 @@ const MenuOrderTab = ({
   );
 };
 
-function ChildModal({payButtonOnClick, total, customerPayment, handleMainModalClose, discountPayment}) {
+function ChildModal({payButtonOnClick, total, customerPayment, handleMainModalClose, discountPayment, menuOnCategory}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
     if (isNaN(customerPayment)){
@@ -195,6 +197,7 @@ function ChildModal({payButtonOnClick, total, customerPayment, handleMainModalCl
       }
     }
   };
+
   const handleClose = () => {
     setOpen(false);
     payButtonOnClick(customerPayment)
@@ -208,24 +211,66 @@ function ChildModal({payButtonOnClick, total, customerPayment, handleMainModalCl
 
       <Modal hideBackdrop open={open} onClose={handleClose}>
         <Box className={styles['child-style']}>
-          <Button onClick={handleClose} className={styles['Close_Button']}> X </Button>
-            <div className={styles['Wrapper']}>
-                <div className={styles['Image-Section']}>
-                  <Image
-                    src="/images/logo.png"
-                    alt="Escobar Logo"
-                    width="100"
-                    height="100"
-                    objectFit="contain"
-                  />
+          <div className={styles['Image-Section']}>
+            <Image
+                src="/images/logo.png"
+                alt="Escobar Logo"
+                width="40"
+                height="40"
+                objectFit="contain"
+            />
+          </div>
+        <Button onClick={handleClose} className={styles['Close_Button']}> X </Button>
+          <div className={styles['Wrapper']}>
+
+            
+                <div className={styles['Text-Section']}>
+                  <h1 className={styles['Order-Text']}> Order # 20  </h1>
+                  <h1  className={styles['Date-Text']}> {`${new Date().getFullYear()} -- ${new Date().getMonth()} -- ${new Date().getDate()}`} </h1>
                 </div>
 
-                <div className={styles['Text-Section']}>
-                  <h1> The Change for the transaction is:  </h1>
-                    <div className={styles['Change-Section']}>
-                      <h1> ₱ {customerPayment - total} </h1> 
-                    </div>
+                <div className={styles['Title-Section']}>
+                  <h2 className={styles['Qty-Text']}> Qty </h2>
+                  <h2  className={styles['Title-Text']}> Item Title  </h2>
+                  <h2 className={styles['Price-Text']}> Price  </h2>
                 </div>
+
+                {menuOnCategory.orderMenu.map((item) => {
+                  return (
+                    <div className={styles["Component-Section"]} key={shortid.generate()}>
+                      <h6 className={styles['Quantity-Component']}>{item.orderMenuQuantity} </h6>
+                      <h6 className={styles['Menuname-Component']}>{item.menuName}</h6>
+                      <h6 className={styles['Price-Component']}>{item.menuPrice}</h6>
+                    </div>
+                  );
+                })}
+
+
+                <div className={styles['CustomerPayment-Section']}>
+                  <h2 className={styles['CustomerPayment']}> Customer Payment </h2>
+                  <h2  className={styles['CustomerPaymentPrice']}> {customerPayment}  </h2>
+                </div>
+
+                <div className={styles['Subtotal-Section']}>
+                  <h2 className={styles['Subtotal']}> SubTotal </h2>
+                  <h2  className={styles['SubtotalPrice']}> {total}  </h2>
+                </div>
+
+                <div className={styles['Discounted-Section']}>
+                  <h2 className={styles['Discount']}> Discounted Price </h2>
+                  <h2  className={styles['DiscountPrice']}> {total * (discountPayment/100)}  </h2>
+                </div>
+
+                <div className={styles['Total-Section']}>
+                  <h2 className={styles['Total']}> Total </h2>
+                  <h2  className={styles['TotalPrice']}> {total - (total * (discountPayment/100))}  </h2>
+                </div>
+
+                <div className={styles['Change-Section']}>
+                  <h2 className={styles['Change']}> Change </h2>
+                  <h2  className={styles['ChangePrice']}> {customerPayment - (total - discountPayment)}  </h2>
+                </div>
+              
             </div>
         </Box>
       </Modal>

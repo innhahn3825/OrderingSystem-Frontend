@@ -79,27 +79,28 @@ const NewOrderPage = () => {
       newMenuOnCategory
     ));
   }
-  const handleQuantityOnChange = (name, quantity, quantityToAdd) => {
-    if (quantity + quantityToAdd <= 0){
-      const newMenuOnCategory = [];
-      menuOnCategory.orderMenu.forEach((currentMenu)=> {
-        if(currentMenu.menuName !== name){
-          newMenuOnCategory.push(currentMenu);
-        }
-      });
-      setMenuOnCategory(new MenuOnCategory(
-        menuOnCategory.menuCategoryName,
-        newMenuOnCategory
-      ));
-
+  const handleQuantityOnChange = (name, quantity, quantityToAdd, numberOfServingsLeft) => {
+    if (numberOfServingsLeft > 0 && quantityToAdd === 1){
+      if (quantity + quantityToAdd <= 0){
+        const newMenuOnCategory = [];
+        menuOnCategory.orderMenu.forEach((currentMenu)=> {
+          if(currentMenu.menuName !== name){
+            newMenuOnCategory.push(currentMenu);
+          }
+        });
+        setMenuOnCategory(new MenuOnCategory(
+          menuOnCategory.menuCategoryName,
+          newMenuOnCategory
+        ));
+      }
       return;
     }
+  
     const newMenuOnCategory = menuOnCategory.orderMenu.map((currentMenu)=> {
-      if (currentMenu.quantity > 0){
         if (currentMenu.menuName === name){
           currentMenu.orderMenuQuantity += quantityToAdd;
         }
-      }
+  
       return currentMenu;
     });
     setMenuOnCategory(new MenuOnCategory(
