@@ -13,6 +13,8 @@
     flex-direction: row;
     padding: 15px 15px;
     gap: 10px;
+    user-select: none;
+
 
     &--selected{
         background-color: #003049;
@@ -24,4 +26,12 @@
         font-size: 16px;
         line-height: 16px;
     }
+}
+
+.MenuSideBarCategory:hover{
+    background-color: #fafafa;
+}
+.MenuSideBarCategory--selected:hover{
+    background-color: #003049;
+    color: white;
 }

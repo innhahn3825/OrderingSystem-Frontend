@@ -95,10 +95,11 @@ const NewOrderPage = () => {
       return;
     }
     const newMenuOnCategory = menuOnCategory.orderMenu.map((currentMenu)=> {
-      if (currentMenu.menuName === name){
-        currentMenu.orderMenuQuantity += quantityToAdd;
+      if (currentMenu.quantity > 0){
+        if (currentMenu.menuName === name){
+          currentMenu.orderMenuQuantity += quantityToAdd;
+        }
       }
-
       return currentMenu;
     });
     setMenuOnCategory(new MenuOnCategory(

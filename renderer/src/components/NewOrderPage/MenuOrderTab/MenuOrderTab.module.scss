@@ -10,6 +10,7 @@
     min-height: 93.6vh;    
     background: #FFFFFF;
     box-shadow: -4px 0px 20px rgba(0, 0, 0, 0.02);
+    user-select: none;
 }
 
 .txt-section {
@@ -98,6 +99,151 @@
 .total-section:active{
     transform: translateY(4px);
 }
+.style {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 566px;
+    height: 410px;
+    display: flex;
+    background-color: #FAFAFA;
+    border: 3px solid;
+    border-radius: 6px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    user-select: none;
+
+    .Close_Button{
+        position:absolute;
+        top:0;
+        right:0;
+        background-color: red;
+        color: white;
+        border: 3px solid #000000;
+    }
+    .Close_Button:active{
+        box-shadow: 0 5px #666;
+        transform: translate(2px);
+        background-color: #f80707bc;
+    }
+
+    .Wrapper{ 
+        .Image-Section {
+            margin-bottom: 25px;
+        }
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+
+        .Text-Section {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            
+            .Input-Section--Payment{
+                display: flex;
+                flex-direction: row;
+                gap: 30px;
+
+                h1 {
+
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 16px;
+                    text-align: center;
+                    display: inline-block;
+                    white-space: nowrap;
+                }
+                .Input-Forms--Payment{
+                    margin-left: auto; 
+                    margin-right: 0;
+                    width: 220px;
+                    font-size: 13px;
+                    border-radius: 4px;
+                    border-color: #CED4DA;
+                    padding: 5px;
+                    margin-right: 10px;
+                    ::placeholder {
+                        color: #6C757D;
+                        opacity: 1;
+
+                        }
+                    }
+                    
+                }
+
+                .Input-Section--Discount{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 5px;
+
+    
+                    h1 {
+    
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 16px;
+                        text-align: center;
+                        display: inline-block;
+                        white-space: nowrap;
+                    }
+
+                    .Input-Forms--Discount{
+                        margin-left: auto; 
+                        margin-right: 0;
+                        width: 200px;
+                        font-size: 12.5px;
+
+                        border-radius: 4px;
+                        border-color: #CED4DA;
+                        padding: 5px;
+                        ::placeholder {
+                            color: #6C757D;
+                            opacity: 1;
+                            font-size: 12px;
+                        }
+                    }
+                    .Percentage{
+                        font-size:16px;
+                        display: flex;
+                        align-items: center;
+                        margin-right: 10px;
+
+                    }
+                        
+                    }
+                
+            
+            }
+            .Button-Section {
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+
+                .Confirm_Button{
+                    width: 128px;
+                    height: 45.84px;
+                    box-sizing: border-box;
+                    background: #36CD1D;
+                    border: 3px solid #000000;
+                    color: white;
+                    justify-content: center;
+
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 30px;
+                }
+            }
+        }
+    }
 
 .child-style{
     position: absolute;
@@ -111,6 +257,7 @@
     border: 3px solid;
     border-radius: 6px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    user-select: none;
 
     .Close_Button{
         position:absolute;
@@ -152,7 +299,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-left: 130px;
+        margin-left: 100px;
 
         .Image-Section {
             margin-bottom: 15px;
@@ -189,90 +336,3 @@
     }
 }
 
-
-.style {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 566px;
-    height: 410px;
-    display: flex;
-    background-color: #FAFAFA;
-    border: 3px solid;
-    border-radius: 6px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
-
-    .Close_Button{
-        position:absolute;
-        top:0;
-        right:0;
-        background-color: red;
-        color: white;
-        border: 3px solid #000000;
-    }
-    .Close_Button:active{
-        box-shadow: 0 5px #666;
-        transform: translate(2px);
-        background-color: #f80707bc;
-    }
-
-    .Wrapper{ 
-        .Image-Section {
-            margin-bottom: 25px;
-        }
-        justify-content: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-left: 120px;
-
-    }
-
-
-    .Text-Section {
-        h1 {
-            font-style: normal;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 20px;
-            text-align: center;
-        }
-
-        .Button-Section {
-            margin-top: 20px;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-
-            .Input-Forms {
-                width: 100%;
-                border-radius: 4px;
-                border-color: #CED4DA;
-                padding: 5px;
-                ::placeholder {
-                    color: #6C757D;
-                    opacity: 1;
-                  }
-            }
-            
-            .Confirm_Button{
-                width: 128px;
-                height: 45.84px;
-                box-sizing: border-box;
-                background: #36CD1D;
-                border: 3px solid #000000;
-                color: white;
-                justify-content: center;
-
-                font-style: normal;
-                font-weight: 400;
-                font-size: 20px;
-                line-height: 30px;
-            }
-        }
-    }
-}

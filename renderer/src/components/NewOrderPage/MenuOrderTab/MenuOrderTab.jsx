@@ -20,6 +20,8 @@ const MenuOrderTab = ({
 
   const [open, setOpen] = React.useState(false);
   const [customerPayment, setCustomerPayment] = useState(0);
+  const [discountPayment, setDiscountPayment] = useState(0);
+
   const handleClose = () => {
     setOpen(false);
   };
@@ -29,6 +31,9 @@ const MenuOrderTab = ({
   };
   const customerPaymentOnChange = (e) => {
     setCustomerPayment(e.target.value);
+  }
+  const discountPaymentOnChange = (e) => {
+    setDiscountPayment(e.target.value);
   }
 
   useEffect(() => {
@@ -101,38 +106,55 @@ const MenuOrderTab = ({
             {" "}
             X{" "}
           </Button>
-          <div className={styles["Wrapper"]}>
-            <div className={styles["Image-Section"]}>
+          <div className={styles["Image-Section"]}>
               <Image
                 src="/images/logo.png"
                 alt="Escobar Logo"
-                width="100"
-                height="100"
+                width="40"
+                height="40"
                 objectFit="contain"
                 draggable="false"
               />
             </div>
-
+          <div className={styles["Wrapper"]}>
             <div className={styles["Text-Section"]}>
-              <h1> Please input the Customer Payment </h1>
-              <div className={styles["Button-Section"]}>
-                <input
+            <div className={styles["Input-Section--Payment"]}>
+
+              <h1> Please input the Customer Payment : </h1>
+              <input
                   value={customerPayment}
                   onChange={customerPaymentOnChange}
                   type="text"
                   id="first"
-                  className={styles["Input-Forms"]}
+                  className={styles["Input-Forms--Payment"]}
                   placeholder="Input the money of the customer"
                 />
+                </div>
+
+                <div className={styles["Input-Section--Discount"]}>
+                <h1> Input Discount Value : </h1>
+                <input
+                  value={discountPayment}
+                  onChange={discountPaymentOnChange}
+                  type="text"
+                  id="first"
+                  className={styles["Input-Forms--Discount"]}
+                  placeholder="Input Percentage of the Discount"
+                />
+                <h1 className={styles["Percentage"]}> % </h1>
+                </div>
+
+                </div>
+              <div className={styles["Button-Section"]}>
                 <ChildModal
                   className={styles["Confirm_Button"]}
                   payButtonOnClick={payButtonOnClick}
                   total={total}
                   customerPayment={customerPayment}
                   handleMainModalClose={handleClose}
+                  discountPayment={discountPayment}
                 />
               </div>
-            </div>
           </div>
         </Box>
       </Modal>
@@ -140,14 +162,37 @@ const MenuOrderTab = ({
   );
 };
 
-function ChildModal({payButtonOnClick, total, customerPayment, handleMainModalClose}) {
+function ChildModal({payButtonOnClick, total, customerPayment, handleMainModalClose, discountPayment}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
-    if (total > customerPayment){ 
-       toast.error(" The Customer Payment must be higher than the total");
+    if (isNaN(customerPayment)){
+      if (customerPayment.substring(0, 1) === "₱"){
+        toast.error(" Please remove the ₱ Sign ");
+      }
+      else{
+        toast.error(" The Customer Payment must be a number");
+      }
     }
-    else{ 
-      setOpen(true);
+    else if (isNaN(discountPayment)){
+      toast.error("Please Input a Number for the Discount Value");
+    }
+    else{
+
+      if (total > customerPayment){ 
+        toast.error(" The Customer Payment must be higher than the total");
+        
+      }
+      else if (customerPayment < 0){ 
+        toast.error(" The Customer Payment should be higher than 0");
+      }
+      else{ 
+        if (discountPayment < 0) {
+          toast.error(" Discount should be higher than 0");
+        }
+        else{
+          setOpen(true);
+        }
+      }
     }
   };
   const handleClose = () => {
