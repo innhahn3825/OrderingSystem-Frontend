@@ -80,7 +80,7 @@ const NewOrderPage = () => {
     ));
   }
   const handleQuantityOnChange = (name, quantity, quantityToAdd, numberOfServingsLeft) => {
-    if (numberOfServingsLeft > 0 && quantityToAdd === 1){
+    // if (numberOfServingsLeft > 0 && quantityToAdd === 1){
       if (quantity + quantityToAdd <= 0){
         const newMenuOnCategory = [];
         menuOnCategory.orderMenu.forEach((currentMenu)=> {
@@ -92,9 +92,11 @@ const NewOrderPage = () => {
           menuOnCategory.menuCategoryName,
           newMenuOnCategory
         ));
-      }
+      // }
       return;
     }
+
+    if (numberOfServingsLeft > 0 && quantityToAdd === 1) return;
   
     const newMenuOnCategory = menuOnCategory.orderMenu.map((currentMenu)=> {
         if (currentMenu.menuName === name){
@@ -141,7 +143,7 @@ const NewOrderPage = () => {
     );
   }
 
-  const handlePayButtonOnClick = (customerPayment) => {
+  const handlePayButtonOnClick = (customerPayment, discountPayment) => {
     const customerFoodOrders = menuOnCategory.orderMenu.map((orderMenu) => {
       console.log("orderMenu: ", orderMenu);
 
@@ -161,7 +163,15 @@ const NewOrderPage = () => {
       0
     );
 
-    const order = new Order(1, employeeName, new Date(), customerFoodOrders, customerPayment, total);
+    const order = new Order(
+      1,
+      employeeName,
+      new Date(),
+      customerFoodOrders,
+      customerPayment,
+      discountPayment,
+      total
+    );
 
     const handleOrderSuccess = () => {
       setMenuOnCategory(

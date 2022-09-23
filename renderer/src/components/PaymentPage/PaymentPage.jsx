@@ -14,6 +14,7 @@ const PaymentPage = () => {
   const [totalPages, setTotalPages] = useState(0);
   const [orderTabItems, setOrderTabItems] = useState([]);
   const [orderCardSelected, setOrderCardSelected] = useState(null);
+  const [orderDiscount, setOrderDiscount] = useState(0);
 
   const rest = new Rest();
 
@@ -39,9 +40,10 @@ const PaymentPage = () => {
     );
   }
 
-  const handleOrderCardOnClick = (items, orderId) => {
+  const handleOrderCardOnClick = (items, orderId, discount) => {
     setOrderTabItems(items);
     setOrderCardSelected(orderId);
+    setOrderDiscount(discount);
   }
 
   const handleOrdersLoad = (contents) => {
@@ -97,6 +99,7 @@ const PaymentPage = () => {
         <PaymentOrderTab 
         orderTabItems={orderTabItems} 
         orderCardSelected={orderCardSelected}
+        orderDiscount={orderDiscount}
         />
       </div>
     </div>

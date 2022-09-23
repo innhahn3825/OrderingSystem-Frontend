@@ -200,7 +200,7 @@ function ChildModal({payButtonOnClick, total, customerPayment, handleMainModalCl
 
   const handleClose = () => {
     setOpen(false);
-    payButtonOnClick(customerPayment)
+    payButtonOnClick(customerPayment, discountPayment)
     handleMainModalClose()
 
   };

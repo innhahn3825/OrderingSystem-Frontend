@@ -6,6 +6,7 @@ class Order {
   orderTime: Date;
   customerFoodOrders: Array<CustomerFoodOrder>;
   payment: number;
+  discount: number
   totalCost: number;
 
   constructor(
@@ -14,6 +15,7 @@ class Order {
     orderTime: Date,
     customerFoodOrders: Array<CustomerFoodOrder>,
     payment: number,
+    discount: number,
     totalCost: number
   ) {
     this.orderId = orderId;
@@ -21,6 +23,7 @@ class Order {
     this.orderTime = orderTime;
     this.customerFoodOrders = customerFoodOrders;
     this.payment = payment;
+    this.discount = discount;
     this.totalCost = totalCost;
   }
 
@@ -31,6 +34,7 @@ class Order {
       orderTime: this.orderTime,
       customerFoodOrders: this.customerFoodOrders,
       payment: this.payment,
+      discount: this.discount,
       totalCost: this.totalCost,
     };
   }

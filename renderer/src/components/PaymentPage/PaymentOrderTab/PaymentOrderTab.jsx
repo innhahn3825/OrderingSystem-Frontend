@@ -4,7 +4,7 @@ import { PaymentOrderTabData } from "../../../data/DataIndex"
 import { PaymentOrderTabCard } from "../../ComponentIndex";
 import shortid from 'shortid';
 
-const PaymentOrderTab = ({orderTabItems, orderCardSelected}) => {
+const PaymentOrderTab = ({orderTabItems, orderCardSelected, orderDiscount}) => {
 
   const total = orderTabItems.reduce(
     (sum, currentMenu) =>
@@ -14,33 +14,35 @@ const PaymentOrderTab = ({orderTabItems, orderCardSelected}) => {
 
     console.log(orderCardSelected);
   return (
-    <div className={styles['PaymentOrderTab']}>
-      <div className={styles['txt-section']}>
-      </div>
+    <div className={styles["PaymentOrderTab"]}>
+      <div className={styles["txt-section"]}></div>
 
-      <div className={styles['title-section']}>
+      <div className={styles["title-section"]}>
         <p> Order # {orderCardSelected} </p>
-        <p className={styles['Quantity']}> Qty </p>
+        <p className={styles["Quantity"]}> Qty </p>
       </div>
 
-      <div className={styles['component-section']}>
-      {orderTabItems.map((item) =>{
-        return(
-              <div key={shortid.generate()}>
-                <PaymentOrderTabCard title={item.foodOrder.menu.menuName} quantity ={item.foodOrder.menuQuantity} />
-              </div>
-            )
-      })}
+      <div className={styles["component-section"]}>
+        {orderTabItems.map((item) => {
+          return (
+            <div key={shortid.generate()}>
+              <PaymentOrderTabCard
+                title={item.foodOrder.menu.menuName}
+                quantity={item.foodOrder.menuQuantity}
+              />
+            </div>
+          );
+        })}
       </div>
 
-      <div className={styles['Total-Section']}>
-        <div className={styles['Txt-Section']}>
+      <h3> {`Discount: ${orderDiscount}%`}</h3>
+      <div className={styles["Total-Section"]}>
+        <div className={styles["Txt-Section"]}>
           <h1> {`Total $${total}`}</h1>
         </div>
       </div>
-
     </div>
-  )
+  );
 }
 
 export default PaymentOrderTab
