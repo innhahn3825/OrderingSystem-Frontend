@@ -23,7 +23,16 @@
         font-size: 22px;
         line-height: 24px;
     }
+    .orderno-section{
+        p{
+            font-style: normal;
+            font-weight: 800;
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
 }
+
 
 .title-section{
     margin-top: -30px;
@@ -31,7 +40,7 @@
     flex-direction: row;
     justify-content: space-between;
     padding-top: 30px;
-    gap: 195px;
+    gap: 50px;
 
     p{
         font-style: normal;
@@ -45,6 +54,257 @@
 
 }
 
+.Text-Section {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 10px;
+    .Order-Text{
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 20px;
+        text-align: center;
+        margin-right: auto;
+        margin-left: 5px; 
+    }
+    .Date-Text{
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 20px;
+        text-align: center;
+        margin-right: 5px;
+        margin-left: auto; 
+    }
+}
+.Title-Section {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 5px;
+
+    
+    .Qty-Text{
+        font-style: normal;
+        font-weight: 550;
+        font-size: 18px;
+        line-height: 20px;
+        margin-right: auto;
+        margin-left: 20px; 
+    }
+    .Title-Text{
+        font-style: normal;
+        font-weight: 550;
+        font-size: 18px;
+        line-height: 20px;
+        margin-left: 20px;
+
+    }
+    .Price-Text{
+        font-style: normal;
+        font-weight: 550;
+        font-size: 18px;
+        line-height: 20px;
+        margin-right: 10px;
+        margin-left: auto;     
+    }
+}
+.Component-Section{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 5px;
+    
+    .Quantity-Component{
+        font-family: 'ABeeZee';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        margin-right: auto;
+        margin-left: 30px; 
+
+    }
+    .Menuname-Component{
+        font-family: 'ABeeZee';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px; 
+        margin-left: 10px;
+    }
+    .Price-Component{
+        font-family: 'ABeeZee';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        margin-right: 10px;
+        margin-left: auto;                
+    }
+}
+
+.CustomerPayment-Section {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 5px;
+
+    
+    .CustomerPayment{
+        font-family: 'ABeeZee';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 16px;
+        text-align: left;
+        margin-right: auto;
+        margin-left: 10px; 
+    }
+
+    .CustomerPaymentPrice{
+        display: flex;
+        margin-left: auto; 
+        margin-right: 10px;
+        font-family: 'ABeeZee';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 16px;
+    }
+}
+
+.Subtotal-Section {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 5px;
+
+    .Subtotal{
+        font-family: 'ABeeZee';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 16px;
+        text-align: left;
+        margin-right: auto;
+        margin-left: 10px; 
+    }
+
+    .SubtotalPrice{
+        display: flex;
+        margin-left: auto; 
+        margin-right: 10px;
+        font-family: 'ABeeZee';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 16px;
+    }
+}
+
+.Discounted-Section {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 5px;
+
+    .Discount{
+        font-family: 'ABeeZee';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 16px;
+        text-align: left;
+        margin-right: auto;
+        margin-left: 10px; 
+    }
+
+    .DiscountPrice{
+        display: flex;
+        margin-left: auto; 
+        margin-right: 10px;
+        font-family: 'ABeeZee';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 16px;
+    }
+}
+
+.Total-Section {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 5px;
+
+    .Total{
+        font-family: 'ABeeZee';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 16px;
+        text-align: left;
+        margin-right: auto;
+        margin-left: 10px; 
+    }
+
+    .TotalPrice{
+        display: flex;
+        margin-left: auto; 
+        margin-right: 10px;
+        font-family: 'ABeeZee';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 16px;
+    }
+}
+
+.Change-Section {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 5px;
+
+    .Change{
+        font-family: 'ABeeZee';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 16px;
+        text-align: left;
+        margin-right: auto;
+        margin-left: 10px; 
+    }
+
+    .ChangePrice{
+        display: flex;
+        margin-left: auto; 
+        margin-right: 10px;
+        font-family: 'ABeeZee';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 16px;
+    }
+}
+
 .Total-Section{
     display: flex;
     justify-content: center;
@@ -52,7 +312,7 @@
     background: #003049;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
     border-radius: 6px;
-    width: 289px;
+    width: 300px;
     height: 50px;
     position: absolute;
     bottom: 10px;
@@ -81,7 +341,7 @@
     background: #003049;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
     border-radius: 6px;
-    width: 289px;
+    width: 300px;
     height: 50px;
     position: absolute;
     bottom: 10px;
@@ -103,3 +363,4 @@
     }
 
 }
+

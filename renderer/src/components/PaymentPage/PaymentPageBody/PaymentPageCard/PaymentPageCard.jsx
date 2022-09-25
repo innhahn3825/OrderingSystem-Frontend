@@ -26,7 +26,6 @@ const PaymentPageCard = ({ordernum, quantity, price, isSelected, voidButtonOnCli
                 <div className={styles['Second-Section']}>
                     <h4 className={styles['Order-Time']}> Order Time: {orderDate.split("T").join(" – ")} </h4>
                     <div className={styles['Price-Section']}>
-                    <h3> ₱ {price} </h3>
                     <button onClick={handleOpen}> Void </button>
                     </div>
                     <div>

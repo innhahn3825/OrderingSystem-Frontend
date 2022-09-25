@@ -226,7 +226,7 @@ function ChildModal({payButtonOnClick, total, customerPayment, handleMainModalCl
             
                 <div className={styles['Text-Section']}>
                   <h1 className={styles['Order-Text']}> Order # 20  </h1>
-                  <h1  className={styles['Date-Text']}> {`${new Date().getFullYear()} -- ${new Date().getMonth()} -- ${new Date().getDate()}`} </h1>
+                  <h1  className={styles['Date-Text']}> {`${new Date().getFullYear()} / ${new Date().getMonth()} / ${new Date().getDate()}`} </h1>
                 </div>
 
                 <div className={styles['Title-Section']}>

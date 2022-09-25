@@ -33,7 +33,7 @@ const PaymentPageBody = ({
 
       {items.map((item) => {
         return (
-          <div key={shortid.generate()} onClick={()=>{orderCardOnClick(item.customerFoodOrders, item.orderId, item.discount)}}>
+          <div key={shortid.generate()} onClick={()=>{orderCardOnClick(item.customerFoodOrders, item.orderId, item.discount, item.payment)}}>
             <PaymentPageCard
               ordernum={item.orderId}
               quantity={item.customerFoodOrders.length}
