@@ -23,8 +23,15 @@
 .SidebarCategory:active{
     color: white;
     background-color: #003049;
-
 }
+
+.SidebarCategory:hover{
+    color: black;
+    background-color: #fafafa;
+}
+
+
+
 
 
 .Selected{
@@ -44,4 +51,9 @@
         font-size: 14px;
         line-height: 14px;
     }
+}
+
+.Selected:hover{
+    color: white;
+    background-color: #003049;
 }

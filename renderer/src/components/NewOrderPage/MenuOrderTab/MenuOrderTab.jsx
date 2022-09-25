@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import { toast } from 'react-toastify';
+import { Icon } from '@iconify/react';
 
 const MenuOrderTab = ({
   menuOnCategory,
@@ -221,6 +222,8 @@ function ChildModal({payButtonOnClick, total, customerPayment, handleMainModalCl
             />
           </div>
         <Button onClick={handleClose} className={styles['Close_Button']}> X </Button>
+        <Icon icon="bytesize:print" height = "25" width = "25" className={styles["print-icon"]} onClick={() => printPdf(title, pdfColumns, pdfRows)}/>
+
           <div className={styles['Wrapper']}>
 
             
@@ -240,7 +243,7 @@ function ChildModal({payButtonOnClick, total, customerPayment, handleMainModalCl
                     <div className={styles["Component-Section"]} key={shortid.generate()}>
                       <h6 className={styles['Quantity-Component']}>{item.orderMenuQuantity} </h6>
                       <h6 className={styles['Menuname-Component']}>{item.menuName}</h6>
-                      <h6 className={styles['Price-Component']}>{item.menuPrice}</h6>
+                      <h6 className={styles['Price-Component']}> {item.menuPrice}</h6>
                     </div>
                   );
                 })}
@@ -248,27 +251,27 @@ function ChildModal({payButtonOnClick, total, customerPayment, handleMainModalCl
 
                 <div className={styles['CustomerPayment-Section']}>
                   <h2 className={styles['CustomerPayment']}> Customer Payment </h2>
-                  <h2  className={styles['CustomerPaymentPrice']}> {customerPayment}  </h2>
+                  <h2  className={styles['CustomerPaymentPrice']}> ₱ {customerPayment}  </h2>
                 </div>
 
                 <div className={styles['Subtotal-Section']}>
                   <h2 className={styles['Subtotal']}> SubTotal </h2>
-                  <h2  className={styles['SubtotalPrice']}> {total}  </h2>
+                  <h2  className={styles['SubtotalPrice']}> ₱ {total}  </h2>
                 </div>
 
                 <div className={styles['Discounted-Section']}>
                   <h2 className={styles['Discount']}> Discounted Price </h2>
-                  <h2  className={styles['DiscountPrice']}> {total * (discountPayment/100)}  </h2>
+                  <h2  className={styles['DiscountPrice']}> ₱ {total * (discountPayment/100)}  </h2>
                 </div>
 
                 <div className={styles['Total-Section']}>
                   <h2 className={styles['Total']}> Total </h2>
-                  <h2  className={styles['TotalPrice']}> {total - (total * (discountPayment/100))}  </h2>
+                  <h2  className={styles['TotalPrice']}> ₱ {total - (total * (discountPayment/100))}  </h2>
                 </div>
 
                 <div className={styles['Change-Section']}>
                   <h2 className={styles['Change']}> Change </h2>
-                  <h2  className={styles['ChangePrice']}> {customerPayment - (total - discountPayment)}  </h2>
+                  <h2  className={styles['ChangePrice']}> ₱ {customerPayment - (total - discountPayment)}  </h2>
                 </div>
               
             </div>

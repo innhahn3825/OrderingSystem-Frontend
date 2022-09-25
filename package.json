@@ -23,6 +23,8 @@
     "electron-serve": "^1.1.0",
     "electron-store": "^8.0.1",
     "find-pid-from-port": "^0.1.0",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.5.25",
     "kill-port": "^2.0.1",
     "react-clock": "^3.1.0",
     "react-toastify": "^9.0.8",
@@ -32,6 +34,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
+    "@iconify/react": "^4.0.0",
     "@storybook/addon-actions": "^6.5.10",
     "@storybook/addon-essentials": "^6.5.10",
     "@storybook/addon-interactions": "^6.5.10",

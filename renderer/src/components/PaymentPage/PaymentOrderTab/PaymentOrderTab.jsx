@@ -3,20 +3,40 @@ import styles from './PaymentOrderTab.module.scss';
 import { PaymentOrderTabData } from "../../../data/DataIndex"
 import { PaymentOrderTabCard } from "../../ComponentIndex";
 import shortid from 'shortid';
+import { Icon } from '@iconify/react';
 
 const PaymentOrderTab = ({orderTabItems, orderCardSelected, orderDiscount, customerPayment}) => {
 
+  const title = 'Escobar - Employee Attendance Data';
+  const pdfColumns = [
+    { header:"ID", dataKey: 'employeeAttendanceJoinId' },
+    { header:"Name", dataKey: 'employeeName' },
+    { header:"Time", dataKey: 'attendanceTime' },
+    { header:"Type", dataKey: 'attendanceType' }
+  ]
+  //
+  const headCells = [
+    { field: 'employeeName', headerName: 'Employee Name', flex: 1, align: 'left' },
+    { field: 'attendanceTime', headerName: 'Time', flex: 1, align: 'left' },
+    { field: 'attendanceType', headerName: 'Type', flex: 1, align: 'left' },
+  ]
   const total = orderTabItems.reduce(
     (sum, currentMenu) =>
       sum + currentMenu.foodOrder.menu.menuPrice * currentMenu.foodOrder.menuQuantity,
     0
   );
 
-    console.log(orderCardSelected);
   return (
-    <div className={styles["PaymentOrderTab"]}>
-      <div className={styles["orderno-section"]}></div>
-      <p> Order # {orderCardSelected} </p>
+    <div className={[styles["PaymentOrderTab"], !orderCardSelected && styles["none"]].join(" ")}>
+    <div className={styles["orderno-section"]}>
+        <h1> Order # {orderCardSelected} </h1>
+        <Icon 
+          icon="bytesize:print" 
+          height = "25" 
+          width = "25" 
+          className={[styles["print-icon"], !orderCardSelected && styles["print-none"]].join(" ")} 
+          onClick={() => printPdf(title, pdfColumns, pdfRows)}/>
+      </div>
 
       <div className={styles["title-section"]}>
         <p className={styles["Quantity"]}> Item Title </p>
@@ -38,38 +58,31 @@ const PaymentOrderTab = ({orderTabItems, orderCardSelected, orderDiscount, custo
         })}
       </div>
 
-        <div className={styles['CustomerPayment-Section']}>
+        <div className={[styles["CustomerPayment-Section"], !orderCardSelected && styles["none"]].join(" ")}>
           <h2 className={styles['CustomerPayment']}> Customer Payment </h2>
           <h2  className={styles['CustomerPaymentPrice']}> {customerPayment}  </h2>
         </div>
 
-        <div className={styles['Subtotal-Section']}>
+        <div className={[styles["Subtotal-Section"], !orderCardSelected && styles["none"]].join(" ")}>
           <h2 className={styles['Subtotal']}> SubTotal </h2>
           <h2  className={styles['SubtotalPrice']}> {total}  </h2>
         </div>
 
-        <div className={styles['Discounted-Section']}>
+        <div className={[styles["Discounted-Section"], !orderCardSelected && styles["none"]].join(" ")}>
           <h2 className={styles['Discount']}> Discounted Price </h2>
           <h2  className={styles['DiscountPrice']}> {total * (orderDiscount/100)}  </h2>
         </div>
 
-        <div className={styles['Total-Section']}>
+        <div className={[styles["Total-Section"], !orderCardSelected && styles["none"]].join(" ")}>
           <h2 className={styles['Total']}> Total </h2>
           <h2  className={styles['TotalPrice']}> {total - (total * (orderDiscount/100))}  </h2>
         </div>
 
-        <div className={styles['Change-Section']}>
+        <div className={[styles["Change-Section"], !orderCardSelected && styles["none"]].join(" ")}>
           <h2 className={styles['Change']}> Change </h2>
           <h2  className={styles['ChangePrice']}> {customerPayment - (total - orderDiscount)}  </h2>
         </div>
 
-      <div className={styles["Total-Section"]}>
-        <div className={styles["Txt-Section"]}>
-          <h1> {`Total $${total}`}</h1>
-          <h1> {`Total ${customerPayment}`}</h1>
-
-        </div>
-      </div>
     </div>
   );
 }

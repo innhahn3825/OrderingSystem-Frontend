@@ -6,7 +6,7 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 0px 10px 0px 0px;
-    gap: 20px;
+
     width: 320px;
     height: 60px;
     background: #FFFFFF;
@@ -28,6 +28,21 @@
         display:flex;
         flex-basis: auto;
         flex-wrap: wrap;
+    }
+    .Quantity{ 
+        position:absolute;
+        margin-left: 180px;
+    }
+    .Title{ 
+        display:flex;
+        flex-basis:auto;
+        flex-wrap: wrap;
+    }
+    .Price{ 
+        position:absolute;
+        right: 0;
+        margin-right: 25px;
+
     }
 }
 
