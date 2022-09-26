@@ -15,11 +15,6 @@ const PaymentOrderTab = ({orderTabItems, orderCardSelected, orderDiscount, custo
     { header:"Type", dataKey: 'attendanceType' }
   ]
   //
-  const headCells = [
-    { field: 'employeeName', headerName: 'Employee Name', flex: 1, align: 'left' },
-    { field: 'attendanceTime', headerName: 'Time', flex: 1, align: 'left' },
-    { field: 'attendanceType', headerName: 'Type', flex: 1, align: 'left' },
-  ]
   const total = orderTabItems.reduce(
     (sum, currentMenu) =>
       sum + currentMenu.foodOrder.menu.menuPrice * currentMenu.foodOrder.menuQuantity,
@@ -35,7 +30,7 @@ const PaymentOrderTab = ({orderTabItems, orderCardSelected, orderDiscount, custo
           height = "25" 
           width = "25" 
           className={[styles["print-icon"], !orderCardSelected && styles["print-none"]].join(" ")} 
-          onClick={() => printPdf(title, pdfColumns, pdfRows)}/>
+          onClick={() => printPdf(title)}/>
       </div>
 
       <div className={styles["title-section"]}>
@@ -80,7 +75,7 @@ const PaymentOrderTab = ({orderTabItems, orderCardSelected, orderDiscount, custo
 
         <div className={[styles["Change-Section"], !orderCardSelected && styles["none"]].join(" ")}>
           <h2 className={styles['Change']}> Change </h2>
-          <h2  className={styles['ChangePrice']}> {customerPayment - (total - orderDiscount)}  </h2>
+          <h2  className={styles['ChangePrice']}> {customerPayment - (total - (total * (orderDiscount/100)))}   </h2>
         </div>
 
     </div>

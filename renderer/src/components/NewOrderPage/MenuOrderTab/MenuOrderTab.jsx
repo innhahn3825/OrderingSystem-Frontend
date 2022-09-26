@@ -6,8 +6,15 @@ import shortid from 'shortid';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 import { toast } from 'react-toastify';
 import { Icon } from '@iconify/react';
+import dropdownIcon from '@iconify/icons-gridicons/dropdown';
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
 const MenuOrderTab = ({
   menuOnCategory,
@@ -16,11 +23,20 @@ const MenuOrderTab = ({
   deleteAllItemOnClick,
   payButtonOnClick
 }) => {
+  const [age, setAge] = React.useState('');
 
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
   const [total, setTotal] = useState(1);
   const [open, setOpen] = React.useState(false);
+  const [type, setType] = useState('new-user');
+  const handleTypeChange = (e) => {
+    setType(e.target.value);
+  }
   const [customerPayment, setCustomerPayment] = useState(0);
   const [discountPayment, setDiscountPayment] = useState(0);
+
 
   const handleClose = () => {
     setOpen(false);
@@ -47,13 +63,19 @@ const MenuOrderTab = ({
   }, [menuOnCategory]);
 
 
-
-
   return (
     <div className={styles["MenuOrderTab"]}>
       <div className={styles["txt-section"]}>
-        <h3> New Order </h3>
-        <button onClick={deleteAllItemOnClick}>
+        <ToggleButtonGroup
+          className={'toggle_group'}
+          value={type}
+          exclusive
+          onChange={handleTypeChange}
+        >
+          <ToggleButton value="new-user">New Order</ToggleButton>
+          <ToggleButton value="existing-">Existing Order</ToggleButton>
+        </ToggleButtonGroup>        
+      <button onClick={deleteAllItemOnClick}>
           <Image
             src="/images/delete.svg"
             alt="clear all icon"
@@ -84,6 +106,31 @@ const MenuOrderTab = ({
           );
         })}
       </div>
+        <Box sx={{ minWidth: 120 }} className={[styles["InputLabel"], type === "new-user" && styles["none"]].join(" ")}>
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label"> Select Order Menu </InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={age}
+            label="Select Order Menu"
+            onChange={handleChange}
+          >
+            
+          {menuOnCategory.orderMenu.map((item) => {
+            return (
+              <div
+                className={styles["container-section"]}
+                key={shortid.generate()}
+              >
+              <MenuItem> {item.menuId} </MenuItem>
+              
+            </div>
+            );
+          })}
+          </Select>
+        </FormControl>
+      </Box>
       <div className={styles["total-section"]} onClick={handleOpen}>
         <div className={styles["total-section--wrapper"]}>
           <h1> ₱ {total}</h1>
@@ -165,6 +212,8 @@ const MenuOrderTab = ({
   );
 };
 
+
+
 function ChildModal({payButtonOnClick, total, customerPayment, handleMainModalClose, discountPayment, menuOnCategory}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
@@ -209,7 +258,6 @@ function ChildModal({payButtonOnClick, total, customerPayment, handleMainModalCl
   return (
     <React.Fragment>
       <Button className={styles['Confirm_Button']} onClick={handleOpen}>Confirm</Button>
-
       <Modal hideBackdrop open={open} onClose={handleClose}>
         <Box className={styles['child-style']}>
           <div className={styles['Image-Section']}>
@@ -248,7 +296,6 @@ function ChildModal({payButtonOnClick, total, customerPayment, handleMainModalCl
                   );
                 })}
 
-
                 <div className={styles['CustomerPayment-Section']}>
                   <h2 className={styles['CustomerPayment']}> Customer Payment </h2>
                   <h2  className={styles['CustomerPaymentPrice']}> ₱ {customerPayment}  </h2>
@@ -271,7 +318,7 @@ function ChildModal({payButtonOnClick, total, customerPayment, handleMainModalCl
 
                 <div className={styles['Change-Section']}>
                   <h2 className={styles['Change']}> Change </h2>
-                  <h2  className={styles['ChangePrice']}> ₱ {customerPayment - (total - discountPayment)}  </h2>
+                  <h2  className={styles['ChangePrice']}> ₱ {customerPayment - (total - (total * (discountPayment/100)))}  </h2>
                 </div>
               
             </div>
@@ -280,6 +327,7 @@ function ChildModal({payButtonOnClick, total, customerPayment, handleMainModalCl
     </React.Fragment>
   );
 }
+
 
 
 export default MenuOrderTab

@@ -34,6 +34,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
+    "@iconify/icons-bytesize": "^1.2.4",
+    "@iconify/icons-gridicons": "^1.2.3",
     "@iconify/react": "^4.0.0",
     "@storybook/addon-actions": "^6.5.10",
     "@storybook/addon-essentials": "^6.5.10",
